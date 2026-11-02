@@ -1,7 +1,7 @@
-# Godot Base Template <img src="https://godotengine.org/assets/press/icon_color.png" alt="Godot logo" width="30"/>
+# Game Off 2026 <img src="https://img.itch.zone/aW1nLzI4MDk2NzAzLnBuZw==/original/OrpHqX.png" alt="Godot logo" width="30"/>
 
 
-A reusable starting point for new Godot projects.
+My submission for Game Off 2026 (my first game jam)! This year's theme is SHIFT. Shift gears. Shift perspectives. Shift dimensions. Shift bits. Work the night shift. Or make a game where the only buttons are the Shift keys.
 
 ## Requirements
 

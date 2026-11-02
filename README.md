@@ -8,13 +8,6 @@ My submission for Game Off 2026 (my first game jam)! This year's theme is SHIFT.
 - Godot 4.4 or newer (uses `.uid` files)
 - [Python 3](https://www.python.org/downloads/) and [pipx](https://pipx.pypa.io/) for the lint/format tooling
 
-## What's Included
-
-- Player movement with walk and sprint
-- Level swapping
-- Sprite animation that plays while moving and stops when idle
-- GDScript linting and formatting via [GDToolkit](https://github.com/Scony/godot-gdscript-toolkit), with a pre-commit hook and a GitHub Actions check on every PR
-
 ## Input Map
 
 These actions need to exist in **Project > Project Settings > Input Map**:
@@ -33,14 +26,6 @@ Set in the Inspector on the player node:
 
 - `walk_speed` (default 300)
 - `sprint_speed` (default 600)
-
-## Starting a New Project
-
-1. Click **Use this template** on GitHub and create a new repo.
-2. Clone it and open the folder in Godot.
-3. Rename the project in Project Settings.
-4. Replace the placeholder sprite and background.
-5. Install the tooling (below).
 
 ## Tooling
 

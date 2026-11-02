@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://g7uksj4hiae8"]
+
+[ext_resource type="Script" uid="uid://18utptuy451p" path="res://src/levels/prototypes/test_level_02/test_level_02.gd" id="1_xru0l"]
+
+[node name="TestLevel02" type="Node2D" unique_id=1896456159]
+script = ExtResource("1_xru0l")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=13937770]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=774619005]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9135976, 0.45409364, 0.9245841, 1)

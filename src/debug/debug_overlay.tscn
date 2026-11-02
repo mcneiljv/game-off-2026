@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cnih6qr78gvty"]
+
+[ext_resource type="Script" uid="uid://bowsuv2jmkr14" path="res://src/debug/debug_overlay.gd" id="1_eudbk"]
+
+[node name="DebugTextOverlay" type="Control" unique_id=361554405]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_eudbk")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1879910894]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=497916357]
+layout_mode = 2
+
+[node name="FpsLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=209088542]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2509804, 1, 0.29411766, 1)
+theme_override_font_sizes/font_size = 10
+text = "FPS: 9,001"
+
+[node name="VersionInfo" type="Label" parent="MarginContainer/VBoxContainer" unique_id=760870773]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Build: "
+
+[node name="DebugInfo" type="Label" parent="MarginContainer/VBoxContainer" unique_id=156420353]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Developed By RadicalNetrunner"

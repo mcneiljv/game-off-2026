@@ -1,6 +1,5 @@
 extends Node
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -11,7 +10,9 @@ func _process(delta: float) -> void:
 	pass
 
 func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_pressed("left_shift"):
+	if event.is_action_pressed("left_shift"):
 		print("left shift hit")
-	if Input.is_action_pressed("right_shift"):
+	if event.is_action_pressed("right_shift"):
 		print("right shift hit")
+	if event.is_action_pressed("dialog"):
+		print("e hit")

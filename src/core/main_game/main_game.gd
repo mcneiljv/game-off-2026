@@ -1,12 +1,19 @@
+class_name MainGame
 extends Node
 
+signal valid_key_press(key: Keys)
+signal invalid_key_press
+
 enum Keys { NONE, LEFT, RIGHT }
+
 var last_key_pressed := Keys.NONE
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass  # Replace with function body.
+	var label_node = get_node("Label")
+	valid_key_press.connect(label_node._on_valid_key_press)
+	invalid_key_press.connect(label_node._on_invalid_key_press)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,7 +30,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _button_press(key: Keys) -> void:
 	if last_key_pressed == key:
-		print("Invalid input. Please press alternate shift key to progress!")
+		invalid_key_press.emit()
 		return
-	print("correct shift hit. progressing.")
+	valid_key_press.emit(key)
 	last_key_pressed = key

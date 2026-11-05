@@ -2,57 +2,16 @@
 
 [ext_resource type="Script" uid="uid://d0njw65b6v505" path="res://src/core/main_game/main_game.gd" id="1_h7gx0"]
 [ext_resource type="PackedScene" uid="uid://cnih6qr78gvty" path="res://src/debug/debug_overlay.tscn" id="1_l4v7s"]
+[ext_resource type="Script" uid="uid://bj4w8kp4t2elj" path="res://src/core/main_game/label.gd" id="2_h7gx0"]
 
 [node name="MainGame" type="Node" unique_id=1457933192]
 process_mode = 3
 script = ExtResource("1_h7gx0")
 
-[node name="Systems" type="Node" parent="." unique_id=138654684]
-
-[node name="World" type="Node2D" parent="." unique_id=1346313924]
-process_mode = 1
-
-[node name="LevelRoot" type="Node2D" parent="World" unique_id=611623012]
-unique_name_in_owner = true
-
-[node name="EntityRoot" type="Node2D" parent="World" unique_id=923390212]
-unique_name_in_owner = true
-
-[node name="EffectsRoot" type="Node2D" parent="World" unique_id=1156466051]
-unique_name_in_owner = true
-
-[node name="HudLayer" type="CanvasLayer" parent="." unique_id=1485837813]
-process_mode = 1
-layer = 10
-
-[node name="HudRoot" type="Control" parent="HudLayer" unique_id=1107531036]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 0
+[node name="Label" type="Label" parent="." unique_id=1428341115]
 offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PauseLayer" type="CanvasLayer" parent="." unique_id=751595022]
-process_mode = 2
-layer = 20
-
-[node name="PauseRoot" type="Control" parent="PauseLayer" unique_id=94631308]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=1115629788]
-process_mode = 3
-layer = 100
-
-[node name="TransitionRoot" type="Control" parent="TransitionLayer" unique_id=1757827522]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 23.0
+script = ExtResource("2_h7gx0")
 
 [node name="DebugLayer" type="CanvasLayer" parent="." unique_id=428591197]
 process_mode = 3

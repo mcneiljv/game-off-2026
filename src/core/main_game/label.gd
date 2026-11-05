@@ -11,9 +11,9 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func _on_valid_key_press(_key) -> void:
+func show_valid_key_press(_key) -> void:
 	text = "valid key pressed!"
 
 
-func _on_invalid_key_press() -> void:
+func show_invalid_key_press() -> void:
 	text = "invalid key pressed! press other shift."

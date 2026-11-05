@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://d0njw65b6v505" path="res://src/core/main_game/main_game.gd" id="1_h7gx0"]
 [ext_resource type="PackedScene" uid="uid://cnih6qr78gvty" path="res://src/debug/debug_overlay.tscn" id="1_l4v7s"]
-[ext_resource type="Script" uid="uid://bj4w8kp4t2elj" path="res://src/core/main_game/label.gd" id="2_h7gx0"]
+[ext_resource type="Script" uid="uid://bj4w8kp4t2elj" path="res://src/core/main_game/monitor.gd" id="2_h7gx0"]
 
 [node name="MainGame" type="Node" unique_id=1457933192]
 process_mode = 3
 script = ExtResource("1_h7gx0")
 
-[node name="Label" type="Label" parent="." unique_id=1428341115]
+[node name="Monitor" type="Label" parent="." unique_id=1428341115]
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("2_h7gx0")

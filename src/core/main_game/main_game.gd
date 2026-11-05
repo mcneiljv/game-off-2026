@@ -11,9 +11,9 @@ var last_key_pressed := Keys.NONE
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var label_node = get_node("Label")
-	valid_key_press.connect(label_node.show_valid_key_press)
-	invalid_key_press.connect(label_node.show_invalid_key_press)
+	var monitor_node: Monitor = get_node("Monitor")
+	valid_key_press.connect(monitor_node.show_valid_key_press)
+	invalid_key_press.connect(monitor_node.show_invalid_key_press)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -25,8 +25,8 @@ func show_valid_key_press(key: KEYS) -> void:
 	elif key == KEYS.RIGHT:
 		print("Pressed Right")
 	else:
-		push_error("No valid key press recorded.")
+		show_invalid_key_press()
 
 
 func show_invalid_key_press() -> void:
-	text = "invalid key pressed! press other shift."
+	push_error("No valid key press recorded.")

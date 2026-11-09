@@ -1,5 +1,5 @@
 class_name Monitor
-extends Label
+extends RichTextLabel
 
 const KEYS := MainGame.Keys
 

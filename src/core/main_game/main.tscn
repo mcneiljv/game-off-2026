@@ -8,9 +8,11 @@
 process_mode = 3
 script = ExtResource("1_h7gx0")
 
-[node name="Monitor" type="Label" parent="." unique_id=1428341115]
+[node name="Monitor" type="RichTextLabel" parent="." unique_id=1103578258]
 offset_right = 40.0
 offset_bottom = 23.0
+fit_content = true
+autowrap_mode = 0
 script = ExtResource("2_h7gx0")
 
 [node name="DebugLayer" type="CanvasLayer" parent="." unique_id=428591197]

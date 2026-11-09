@@ -12,7 +12,7 @@ var last_key_pressed := Keys.NONE
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var monitor_node: Monitor = get_node("Monitor")
-	valid_key_press.connect(monitor_node.show_valid_key_press)
+	valid_key_press.connect(monitor_node.advance_reveal)
 	invalid_key_press.connect(monitor_node.show_invalid_key_press)
 
 

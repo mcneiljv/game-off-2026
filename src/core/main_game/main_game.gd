@@ -14,6 +14,7 @@ func _ready() -> void:
 	var monitor_node: Monitor = get_node("Monitor")
 	valid_key_press.connect(monitor_node.advance_reveal)
 	invalid_key_press.connect(monitor_node.show_invalid_key_press)
+	monitor_node.text_fully_built.connect(_text_finished)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,3 +35,7 @@ func _button_press(key: Keys) -> void:
 		return
 	valid_key_press.emit(key)
 	last_key_pressed = key
+
+
+func _text_finished() -> void:
+	print("Text finished!")

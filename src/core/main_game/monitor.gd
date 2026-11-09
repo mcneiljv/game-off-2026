@@ -3,7 +3,10 @@ extends RichTextLabel
 
 const KEYS := MainGame.Keys
 
-var visible_chars = get_visible_characters()
+@export var char_increment_factor: int = 10
+
+var visible_chars: int = 0
+var text_fully_built: bool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -16,16 +19,22 @@ func _process(_delta: float) -> void:
 	pass
 
 
+func _increment_character_count() -> void:
+	if visible_chars < get_total_character_count():
+		visible_chars += char_increment_factor
+		set_visible_characters(visible_chars)
+
+
 func show_valid_key_press(key: KEYS) -> void:
-	visible_chars += 3
-	set_visible_characters(visible_chars)
-	print("visible chars", get_visible_characters())
+	if text_fully_built:
+		text = "This text is done!"
+		return
 	if key == KEYS.LEFT:
-		print("Pressed Left")
+		_increment_character_count()
 	elif key == KEYS.RIGHT:
-		print("Pressed Right")
-	else:
-		show_invalid_key_press()
+		_increment_character_count()
+	if visible_chars > get_total_character_count():
+		text_fully_built = true
 
 
 func show_invalid_key_press() -> void:

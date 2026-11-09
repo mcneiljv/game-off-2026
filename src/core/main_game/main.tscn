@@ -9,10 +9,15 @@ process_mode = 3
 script = ExtResource("1_h7gx0")
 
 [node name="Monitor" type="RichTextLabel" parent="." unique_id=1103578258]
-offset_right = 40.0
-offset_bottom = 23.0
-fit_content = true
-autowrap_mode = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet luctus augue. Phasellus id nulla quis dolor consectetur pulvinar vitae malesuada magna."
+visible_characters = 0
+visible_ratio = 0.0
 script = ExtResource("2_h7gx0")
 
 [node name="DebugLayer" type="CanvasLayer" parent="." unique_id=428591197]

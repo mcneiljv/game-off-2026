@@ -3,6 +3,8 @@ extends RichTextLabel
 
 const KEYS := MainGame.Keys
 
+var visible_chars = get_visible_characters()
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,10 +17,13 @@ func _process(_delta: float) -> void:
 
 
 func show_valid_key_press(key: KEYS) -> void:
+	visible_chars += 3
+	set_visible_characters(visible_chars)
+	print("visible chars", get_visible_characters())
 	if key == KEYS.LEFT:
-		text = "Pressed Left"
+		print("Pressed Left")
 	elif key == KEYS.RIGHT:
-		text = "Pressed Right"
+		print("Pressed Right")
 	else:
 		push_error("No valid key press recorded.")
 

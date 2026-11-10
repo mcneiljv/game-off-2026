@@ -6,12 +6,14 @@ signal text_fully_built
 @export var char_increment_factor: int = 10
 
 var dialog = FileAccess.get_file_as_string("res://assets/data/dialog.json")
+var parsed_dialog = JSON.parse_string(dialog)
+var dialog_block_count: int = parsed_dialog.size() - 1
 var is_text_populated: bool = false
 var selected_dialog_block: int = 0
 
 
 func _ready() -> void:
-	text = JSON.parse_string(dialog)[str(selected_dialog_block)]
+	text = parsed_dialog[selected_dialog_block]
 
 
 func _increment_character_count() -> void:
@@ -21,6 +23,8 @@ func _increment_character_count() -> void:
 
 func advance_reveal(_key) -> void:
 	if is_text_populated:
+		if selected_dialog_block == dialog_block_count:
+			return
 		_update_text_block()
 
 	_increment_character_count()
@@ -31,11 +35,11 @@ func advance_reveal(_key) -> void:
 
 
 func _update_text_block() -> void:
-	if selected_dialog_block < 2:
+	if selected_dialog_block <= dialog_block_count:
 		selected_dialog_block += 1
 		visible_characters = 0
 		is_text_populated = false
-		text = JSON.parse_string(dialog)[str(selected_dialog_block)]
+		text = parsed_dialog[selected_dialog_block]
 
 
 func show_invalid_key_press() -> void:

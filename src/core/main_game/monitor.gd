@@ -7,12 +7,15 @@ signal text_fully_built
 
 var dialog = FileAccess.get_file_as_string("res://assets/data/dialog.json")
 var parsed_dialog = JSON.parse_string(dialog)
-var dialog_block_count: int = parsed_dialog.size() - 1
+var dialog_block_count: int = parsed_dialog.size() - 1 if parsed_dialog else 0
 var is_text_populated: bool = false
 var selected_dialog_block: int = 0
 
 
 func _ready() -> void:
+	if !parsed_dialog:
+		push_error("Error parsing dialog JSON.")
+		return
 	text = parsed_dialog[selected_dialog_block]
 
 
@@ -22,6 +25,8 @@ func _increment_character_count() -> void:
 
 
 func advance_reveal(_key) -> void:
+	if !parsed_dialog:
+		return
 	if is_text_populated:
 		if selected_dialog_block == dialog_block_count:
 			return

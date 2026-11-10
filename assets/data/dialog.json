@@ -1,5 +1,6 @@
 [
   "[color=red]Lorem ipsum[/color] dolor sit amet, consectetuer adipiscing elit.",
   "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-  "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+  "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+  "This is some wacky text that I'm adding to test the JSON."
 ]

@@ -40,11 +40,11 @@ func advance_reveal(_key) -> void:
 
 
 func _update_text_block() -> void:
-	if selected_dialog_block <= dialog_block_count:
+	if selected_dialog_block < dialog_block_count:
 		selected_dialog_block += 1
+		text = parsed_dialog[selected_dialog_block]
 		visible_characters = 0
 		is_text_populated = false
-		text = parsed_dialog[selected_dialog_block]
 
 
 func show_invalid_key_press() -> void:

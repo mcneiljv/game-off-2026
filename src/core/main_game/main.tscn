@@ -9,12 +9,23 @@ process_mode = 3
 script = ExtResource("1_h7gx0")
 
 [node name="Monitor" type="RichTextLabel" parent="." unique_id=1103578258]
-anchors_preset = 15
+offset_right = 140.0
+offset_bottom = 50.0
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+visible_characters = 0
+script = ExtResource("2_h7gx0")
+
+[node name="Dialog" type="RichTextLabel" parent="." unique_id=1863526824]
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.5
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
+text = "[color=red]Lorem ipsum[/color] dolor sit amet, consectetuer adipiscing elit."
 visible_characters = 0
 visible_ratio = 0.0
 script = ExtResource("2_h7gx0")

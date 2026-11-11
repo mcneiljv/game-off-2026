@@ -31,4 +31,4 @@ func change_text_block(text_str: String) -> void:
 
 
 func show_invalid_key_press() -> void:
-	pass
+	print("Invalid key pressed!")

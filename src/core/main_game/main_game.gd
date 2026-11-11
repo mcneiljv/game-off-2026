@@ -14,6 +14,10 @@ var current_game_state: GameState = GameState.TYPING
 var last_key_pressed: Keys = Keys.NONE
 var selected_dialog_block: int = 0
 
+# TODO: Dialog will autopopulate and won't have to be revealed chunk by chunk
+# Add script/class_name for dialog node and reference it here
+# Pressing either shift will progress the player to the next dialog section
+@onready var dialog_node: Monitor = get_node("Dialog")
 @onready var monitor_node: Monitor = get_node("Monitor")
 
 
@@ -23,10 +27,14 @@ func _ready() -> void:
 		push_error("Error parsing dialog JSON.")
 		return
 	_set_game_state()
-	valid_key_press.connect(monitor_node.advance_reveal)
-	invalid_key_press.connect(monitor_node.show_invalid_key_press)
+	# Monitor Node
 	monitor_node.text_fully_built.connect(_text_finished)
-	monitor_node.change_text_block(parsed_dialog[selected_dialog_block].text)
+
+	# Dialog Node
+	dialog_node.text_fully_built.connect(_text_finished)
+
+	# Shared change text block functionality for both nodes
+	_current_selected_node().change_text_block(parsed_dialog[selected_dialog_block].text)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,26 +54,28 @@ func _button_press(key: Keys) -> void:
 		return
 	# NOTE: Valid alternation check. Nothing should go above this unless necessary.
 	if last_key_pressed == key:
+		_current_selected_node().show_invalid_key_press()
 		invalid_key_press.emit()
 		return
-	if monitor_node.is_text_populated:
+	if _current_selected_node().is_text_populated:
 		if selected_dialog_block == last_block_index:
 			return
 		_change_text_block()
-	match current_game_state:
-		GameState.TYPING:
-			print("We are in typing game state!")
-		GameState.DIALOG:
-			print("We are in dialog game state!")
-		GameState.ENDING:
-			print("We are in ending game state!")
 	last_key_pressed = key
+	_current_selected_node().advance_reveal(key)
 	valid_key_press.emit(key)
 
 
-func _text_finished() -> void:
-	if selected_dialog_block == last_block_index:
-		current_game_state = GameState.ENDING
+func _current_selected_node() -> Node:
+	match current_game_state:
+		GameState.TYPING:
+			return monitor_node
+		GameState.DIALOG:
+			return dialog_node
+		# TODO: Add ending node
+		GameState.ENDING:
+			return monitor_node
+	return dialog_node
 
 
 func _set_game_state() -> void:
@@ -79,4 +89,9 @@ func _change_text_block() -> void:
 	if selected_dialog_block < last_block_index:
 		selected_dialog_block += 1
 		_set_game_state()
-		monitor_node.change_text_block(parsed_dialog[selected_dialog_block].text)
+		_current_selected_node().change_text_block(parsed_dialog[selected_dialog_block].text)
+
+
+func _text_finished() -> void:
+	if selected_dialog_block == last_block_index:
+		current_game_state = GameState.ENDING

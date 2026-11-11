@@ -1,19 +1,12 @@
-# Godot Base Template <img src="https://godotengine.org/assets/press/icon_color.png" alt="Godot logo" width="30"/>
+# Game Off 2026 <img src="https://img.itch.zone/aW1nLzI4MDk2NzAzLnBuZw==/original/OrpHqX.png" alt="Godot logo" width="30"/>
 
 
-A reusable starting point for new Godot projects.
+My submission for Game Off 2026 (my first game jam)! This year's theme is SHIFT. Shift gears. Shift perspectives. Shift dimensions. Shift bits. Work the night shift. Or make a game where the only buttons are the Shift keys.
 
 ## Requirements
 
 - Godot 4.4 or newer (uses `.uid` files)
 - [Python 3](https://www.python.org/downloads/) and [pipx](https://pipx.pypa.io/) for the lint/format tooling
-
-## What's Included
-
-- Player movement with walk and sprint
-- Level swapping
-- Sprite animation that plays while moving and stops when idle
-- GDScript linting and formatting via [GDToolkit](https://github.com/Scony/godot-gdscript-toolkit), with a pre-commit hook and a GitHub Actions check on every PR
 
 ## Input Map
 
@@ -33,14 +26,6 @@ Set in the Inspector on the player node:
 
 - `walk_speed` (default 300)
 - `sprint_speed` (default 600)
-
-## Starting a New Project
-
-1. Click **Use this template** on GitHub and create a new repo.
-2. Clone it and open the folder in Godot.
-3. Rename the project in Project Settings.
-4. Replace the placeholder sprite and background.
-5. Install the tooling (below).
 
 ## Tooling
 

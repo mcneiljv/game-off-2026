@@ -17,7 +17,8 @@ var selected_dialog_block: int = 0
 # TODO: Dialog will autopopulate and won't have to be revealed chunk by chunk
 # Add script/class_name for dialog node and reference it here
 # Pressing either shift will progress the player to the next dialog section
-@onready var dialog_node: Monitor = get_node("Dialog")
+@onready var dialog_box_node := get_node("DialogBox")
+@onready var dialog_label_node: Monitor = get_node("DialogBox/MarginContainer/DialogLabel")
 @onready var monitor_node: Monitor = get_node("Monitor")
 
 
@@ -26,12 +27,13 @@ func _ready() -> void:
 	if not parsed_dialog:
 		push_error("Error parsing dialog JSON.")
 		return
+
 	_set_game_state()
 	# Monitor Node
 	monitor_node.text_fully_built.connect(_text_finished)
 
 	# Dialog Node
-	dialog_node.text_fully_built.connect(_text_finished)
+	dialog_label_node.text_fully_built.connect(_text_finished)
 
 	# Shared change text block functionality for both nodes
 	_current_selected_node().change_text_block(parsed_dialog[selected_dialog_block].text)
@@ -63,6 +65,8 @@ func _button_press(key: Keys) -> void:
 		_change_text_block()
 	last_key_pressed = key
 	_current_selected_node().advance_reveal(key)
+	if current_game_state == GameState.DIALOG:
+		dialog_box_node.visible = true
 	valid_key_press.emit(key)
 
 
@@ -71,18 +75,20 @@ func _current_selected_node() -> Node:
 		GameState.TYPING:
 			return monitor_node
 		GameState.DIALOG:
-			return dialog_node
+			return dialog_label_node
 		# TODO: Add ending node
 		GameState.ENDING:
 			return monitor_node
-	return dialog_node
+	return monitor_node
 
 
 func _set_game_state() -> void:
 	if parsed_dialog[selected_dialog_block].type == "typing":
 		current_game_state = GameState.TYPING
+		dialog_box_node.visible = false
 	if parsed_dialog[selected_dialog_block].type == "dialog":
 		current_game_state = GameState.DIALOG
+	# TODO: Set dialog box visibility for ENDING GameState
 
 
 func _change_text_block() -> void:

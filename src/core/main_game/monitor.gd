@@ -13,6 +13,7 @@ var char_counter: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# NOTE: Disables _process on game start so we don't fire text_fully_built prematurely
 	set_process(false)
 
 

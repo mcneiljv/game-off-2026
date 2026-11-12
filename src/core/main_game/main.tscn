@@ -41,6 +41,7 @@ bbcode_enabled = true
 scroll_active = false
 visible_characters = 0
 script = ExtResource("2_h7gx0")
+auto_reveal = true
 
 [node name="DebugLayer" type="CanvasLayer" parent="." unique_id=428591197]
 process_mode = 3

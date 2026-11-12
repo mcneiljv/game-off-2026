@@ -5,7 +5,7 @@ signal text_fully_built
 
 @export var auto_reveal: bool = false
 @export var char_increment_factor: int = 10
-@export var chars_per_second: int = 100
+@export var chars_per_second: int = 50
 
 var is_text_populated: bool = false
 var char_counter: float = 0.0

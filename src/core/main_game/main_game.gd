@@ -17,8 +17,8 @@ var selected_dialog_block: int = 0
 # TODO: Dialog will autopopulate and won't have to be revealed chunk by chunk
 # Add script/class_name for dialog node and reference it here
 # Pressing either shift will progress the player to the next dialog section
-@onready var dialog_box_node := get_node("DialogBox")
-@onready var dialog_label_node: Monitor = get_node("DialogBox/MarginContainer/DialogLabel")
+@onready var dialog_box_node: PanelContainer = get_node("DialogBox")
+@onready var dialog_label_node: Monitor = get_node("%DialogLabel")
 @onready var monitor_node: Monitor = get_node("Monitor")
 
 

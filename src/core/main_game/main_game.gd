@@ -27,6 +27,7 @@ func _ready() -> void:
 		return
 
 	_set_game_state()
+
 	# Monitor Node
 	monitor_node.text_fully_built.connect(_text_finished)
 
@@ -67,6 +68,7 @@ func _button_press(key: Keys) -> void:
 		dialog_box_node.visible = true
 	if current_game_state == GameState.TYPING:
 		keyboard_click.play()
+		keyboard_click.set_max_polyphony(2)
 
 	valid_key_press.emit(key)
 

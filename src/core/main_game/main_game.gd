@@ -7,6 +7,10 @@ signal invalid_key_press
 enum GameState { TYPING, DIALOG, ENDING }
 enum Keys { NONE, LEFT, RIGHT }
 
+const ENDING_SCREEN = preload("uid://djf06t30qkb5k")
+
+@export var max_polyphony: int = 2
+
 var dialog = FileAccess.get_file_as_string("res://assets/data/dialog.json")
 var parsed_dialog = JSON.parse_string(dialog)
 var last_block_index: int = parsed_dialog.size() - 1 if parsed_dialog else 0
@@ -51,7 +55,10 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _button_press(key: Keys) -> void:
-	if not parsed_dialog or current_game_state == GameState.ENDING:
+	if not parsed_dialog:
+		return
+	if current_game_state == GameState.ENDING:
+		SceneTransition.transition_to(ENDING_SCREEN)
 		return
 	# NOTE: Valid alternation check. Nothing should go above this unless necessary.
 	if last_key_pressed == key:
@@ -68,7 +75,7 @@ func _button_press(key: Keys) -> void:
 		dialog_box_node.visible = true
 	if current_game_state == GameState.TYPING:
 		keyboard_click.play()
-		keyboard_click.set_max_polyphony(2)
+		keyboard_click.set_max_polyphony(max_polyphony)
 
 	valid_key_press.emit(key)
 
@@ -79,9 +86,10 @@ func _current_selected_node() -> Node:
 			return monitor_node
 		GameState.DIALOG:
 			return dialog_label_node
-		# TODO: Add ending node
 		GameState.ENDING:
-			return monitor_node
+			# NOTE: This block is never reached
+			# Transition handled in _button_press
+			pass
 	return monitor_node
 
 
@@ -102,5 +110,4 @@ func _change_text_block() -> void:
 
 func _text_finished() -> void:
 	if selected_dialog_block == last_block_index:
-		# TODO: Set dialog box visibility for ENDING GameState
 		current_game_state = GameState.ENDING

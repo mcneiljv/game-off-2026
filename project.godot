@@ -15,6 +15,10 @@ config/version="0.1.0"
 run/main_scene="uid://dv4effx2wg27c"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
+[autoload]
+
+SceneTransition="*uid://vilbkj8iwt1h"
+
 [display]
 
 window/size/viewport_width=480

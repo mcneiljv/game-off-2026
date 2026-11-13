@@ -1,11 +1,15 @@
 [
   {
-    "type": "typing",
-    "text": "[color=red]Lorem ipsum[/color] dolor sit amet, consectetuer adipiscing elit."
+    "type": "dialog",
+    "text": "Man, it's Friday night and I'm working late again. Everyone else left hours ago, but I have a deadline to meet."
   },
   {
     "type": "dialog",
-    "text": "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem."
+    "text": "I also forgot to eat... Oh well, this should only take about an hour."
+  },
+  {
+    "type": "typing",
+    "text": "Random stupid buzzword business logic gross."
   },
   {
     "type": "typing",
@@ -13,6 +17,6 @@
   },
   {
     "type": "dialog",
-    "text": "This is some wacky text that I'm adding to test the JSON."
+    "text": "[color=red]Yes boss :)[/color]"
   }
 ]

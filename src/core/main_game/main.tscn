@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cnih6qr78gvty" path="res://src/debug/debug_overlay.tscn" id="1_l4v7s"]
 [ext_resource type="Script" uid="uid://bj4w8kp4t2elj" path="res://src/core/main_game/monitor.gd" id="2_h7gx0"]
 [ext_resource type="AudioStream" uid="uid://5rbn4aq3x7md" path="res://assets/audio/creepy-ambience.mp3" id="4_xijci"]
+[ext_resource type="AudioStream" uid="uid://bnpq1pqoc5wqa" path="res://assets/audio/keyboard-key.wav" id="5_yuwmb"]
 
 [node name="MainGame" type="Node" unique_id=1457933192]
 process_mode = 3
@@ -59,7 +60,11 @@ offset_right = 10.0
 offset_bottom = -60.0
 grow_vertical = 0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1174880499]
+[node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=1174880499]
 stream = ExtResource("4_xijci")
 autoplay = true
 bus = &"Ambient"
+
+[node name="KeyboardClick" type="AudioStreamPlayer" parent="." unique_id=2062109141]
+stream = ExtResource("5_yuwmb")
+bus = &"SFX"

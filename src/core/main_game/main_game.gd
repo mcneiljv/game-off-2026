@@ -14,9 +14,10 @@ var current_game_state: GameState = GameState.TYPING
 var last_key_pressed: Keys = Keys.NONE
 var selected_dialog_block: int = 0
 
-@onready var dialog_box_node: PanelContainer = get_node("DialogBox")
-@onready var dialog_label_node: Monitor = get_node("%DialogLabel")
-@onready var monitor_node: Monitor = get_node("Monitor")
+@onready var dialog_box_node: PanelContainer = $DialogBox
+@onready var dialog_label_node: Monitor = %DialogLabel
+@onready var monitor_node: Monitor = $Monitor
+@onready var keyboard_click: AudioStreamPlayer = $KeyboardClick
 
 
 # Called when the node enters the scene tree for the first time.
@@ -64,6 +65,9 @@ func _button_press(key: Keys) -> void:
 	_current_selected_node().advance_reveal(key)
 	if current_game_state == GameState.DIALOG:
 		dialog_box_node.visible = true
+	if current_game_state == GameState.TYPING:
+		keyboard_click.play()
+
 	valid_key_press.emit(key)
 
 

@@ -7,8 +7,9 @@ signal text_fully_built
 @export var char_increment_factor: int = 10
 @export var chars_per_second: int = 50
 
-var is_text_populated: bool = false
 var char_counter: float = 0.0
+var is_text_populated: bool = false
+var text_speed_bonus: int = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,9 +20,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	_text_fully_built()
-	char_counter += chars_per_second * delta
-	visible_characters = round(char_counter)
+	char_counter += (chars_per_second + text_speed_bonus) * delta
+	visible_characters = int(char_counter)
+	_set_text_fully_built()
 
 
 func _increment_character_count() -> void:
@@ -32,10 +33,12 @@ func _increment_character_count() -> void:
 func advance_reveal(_key) -> void:
 	if is_text_populated:
 		return
-
-	if not auto_reveal:
+	if auto_reveal:
+		if visible_characters > 0 and text_speed_bonus == 0:
+			text_speed_bonus = 100
+	else:
 		_increment_character_count()
-		_text_fully_built()
+		_set_text_fully_built()
 
 
 func change_text_block(text_str: String) -> void:
@@ -51,8 +54,9 @@ func show_invalid_key_press() -> void:
 	print("Invalid key pressed!")
 
 
-func _text_fully_built() -> void:
+func _set_text_fully_built() -> void:
 	if visible_characters >= get_total_character_count():
 		is_text_populated = true
+		text_speed_bonus = 0
 		set_process(false)
 		text_fully_built.emit()

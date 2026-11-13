@@ -85,7 +85,6 @@ func _set_game_state() -> void:
 		dialog_box_node.visible = false
 	if parsed_dialog[selected_dialog_block].type == "dialog":
 		current_game_state = GameState.DIALOG
-	# TODO: Set dialog box visibility for ENDING GameState
 
 
 func _change_text_block() -> void:
@@ -97,4 +96,5 @@ func _change_text_block() -> void:
 
 func _text_finished() -> void:
 	if selected_dialog_block == last_block_index:
+		# TODO: Set dialog box visibility for ENDING GameState
 		current_game_state = GameState.ENDING

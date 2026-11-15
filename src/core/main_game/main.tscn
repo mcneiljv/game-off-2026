@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bnpq1pqoc5wqa" path="res://assets/audio/keyboard-key.wav" id="5_yuwmb"]
 [ext_resource type="AudioStream" uid="uid://3d4r3q2ochpr" path="res://assets/audio/monster-tension-1.mp3" id="6_op4kn"]
 [ext_resource type="AudioStream" uid="uid://d1a2qf0fvm43f" path="res://assets/audio/monster-tension-2.mp3" id="7_1flk8"]
+[ext_resource type="Script" uid="uid://bqbq1lw0uc311" path="res://src/core/main_game/sfx_tension.gd" id="7_4i5e7"]
 [ext_resource type="AudioStream" uid="uid://cf74egesdsklv" path="res://assets/audio/monster-tension-3.mp3" id="8_1um3w"]
 [ext_resource type="AudioStream" uid="uid://wnnlnxq2ul36" path="res://assets/audio/monster-tension-4.mp3" id="9_4i5e7"]
 [ext_resource type="AudioStream" uid="uid://j0riv1bujyw1" path="res://assets/audio/monster-tension-5.mp3" id="10_1um3w"]
@@ -76,22 +77,23 @@ bus = &"SFX"
 
 [node name="MonsterSounds" type="Node" parent="." unique_id=138610622]
 
-[node name="MonsterTension1" type="AudioStreamPlayer2D" parent="MonsterSounds" unique_id=1797084569]
+[node name="MonsterTension1" type="AudioStreamPlayer" parent="MonsterSounds" unique_id=261890956]
 stream = ExtResource("6_op4kn")
 bus = &"Monster"
+script = ExtResource("7_4i5e7")
 
-[node name="MonsterTension2" type="AudioStreamPlayer2D" parent="MonsterSounds" unique_id=945802030]
+[node name="MonsterTension2" type="AudioStreamPlayer" parent="MonsterSounds" unique_id=288892226]
 stream = ExtResource("7_1flk8")
 bus = &"Monster"
 
-[node name="MonsterTension3" type="AudioStreamPlayer2D" parent="MonsterSounds" unique_id=1460344751]
+[node name="MonsterTension3" type="AudioStreamPlayer" parent="MonsterSounds" unique_id=37554402]
 stream = ExtResource("8_1um3w")
 bus = &"Monster"
 
-[node name="MonsterTension4" type="AudioStreamPlayer2D" parent="MonsterSounds" unique_id=926911400]
+[node name="MonsterTension4" type="AudioStreamPlayer" parent="MonsterSounds" unique_id=1447821107]
 stream = ExtResource("9_4i5e7")
 bus = &"Monster"
 
-[node name="MonsterTension5" type="AudioStreamPlayer2D" parent="MonsterSounds" unique_id=154984988]
+[node name="MonsterTension5" type="AudioStreamPlayer" parent="MonsterSounds" unique_id=1271175137]
 stream = ExtResource("10_1um3w")
 bus = &"Monster"

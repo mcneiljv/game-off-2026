@@ -17,7 +17,7 @@ var last_block_index: int = parsed_dialog.size() - 1 if parsed_dialog else 0
 var current_game_state: GameState = GameState.TYPING
 var last_key_pressed: Keys = Keys.NONE
 var selected_dialog_block: int = 0
-var dialog_dict: Dictionary = parsed_dialog[selected_dialog_block]
+var dialog_dict: Dictionary = {}
 
 @onready var dialog_box_node: PanelContainer = $DialogBox
 @onready var dialog_label_node: Monitor = %DialogLabel
@@ -31,7 +31,10 @@ func _ready() -> void:
 		push_error("Error parsing dialog JSON.")
 		return
 
+	dialog_dict = parsed_dialog[selected_dialog_block]
+
 	_set_game_state()
+	keyboard_click.set_max_polyphony(max_polyphony)
 
 	# Monitor Node
 	monitor_node.text_fully_built.connect(_text_finished)
@@ -77,7 +80,6 @@ func _button_press(key: Keys) -> void:
 		dialog_box_node.visible = true
 	if current_game_state == GameState.TYPING:
 		keyboard_click.play()
-		keyboard_click.set_max_polyphony(max_polyphony)
 
 	valid_key_press.emit(key)
 
@@ -104,13 +106,15 @@ func _set_game_state() -> void:
 
 
 func _get_sound_data() -> void:
+	if not dialog_dict.has("sound") and not dialog_dict.has("closeness"):
+		return
 	if dialog_dict.has("sound") and dialog_dict.has("closeness"):
 		var audio_node_path: String = "MonsterSounds/%s" % dialog_dict.get("sound")
 		var monster_audio_node: MonsterAudio = get_node_or_null(audio_node_path)
 		if monster_audio_node:
 			monster_audio_node.play_at_closeness(dialog_dict.get("closeness"))
 		else:
-			push_error("Audio node not found.")
+			push_error("Audio node not found %s" % dialog_dict.get("sound"))
 
 
 func _change_text_block() -> void:

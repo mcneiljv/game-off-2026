@@ -23,7 +23,6 @@ var dialog_dict: Dictionary = parsed_dialog[selected_dialog_block]
 @onready var dialog_label_node: Monitor = %DialogLabel
 @onready var monitor_node: Monitor = $Monitor
 @onready var keyboard_click: AudioStreamPlayer = $KeyboardClick
-@onready var monster_tension_1: AudioStreamPlayer = $MonsterSounds/MonsterTension1
 
 
 # Called when the node enters the scene tree for the first time.
@@ -106,8 +105,12 @@ func _set_game_state() -> void:
 
 func _get_sound_data() -> void:
 	if dialog_dict.has("sound") and dialog_dict.has("closeness"):
-		monster_tension_1.set_volume(dialog_dict.get("closeness"))
-		print("sound", dialog_dict.get("sound"))
+		var audio_node_path: String = "MonsterSounds/%s" % dialog_dict.get("sound")
+		var monster_audio_node: MonsterAudio = get_node_or_null(audio_node_path)
+		if monster_audio_node:
+			monster_audio_node.play_at_closeness(dialog_dict.get("closeness"))
+		else:
+			push_error("Audio node not found.")
 
 
 func _change_text_block() -> void:

@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bnpq1pqoc5wqa" path="res://assets/audio/keyboard-key.wav" id="5_yuwmb"]
 [ext_resource type="AudioStream" uid="uid://3d4r3q2ochpr" path="res://assets/audio/monster-tension-1.mp3" id="6_op4kn"]
 [ext_resource type="AudioStream" uid="uid://d1a2qf0fvm43f" path="res://assets/audio/monster-tension-2.mp3" id="7_1flk8"]
-[ext_resource type="Script" uid="uid://bqbq1lw0uc311" path="res://src/core/main_game/sfx_tension.gd" id="7_4i5e7"]
+[ext_resource type="Script" uid="uid://bqbq1lw0uc311" path="res://src/core/main_game/monster_audio.gd" id="7_4i5e7"]
 [ext_resource type="AudioStream" uid="uid://cf74egesdsklv" path="res://assets/audio/monster-tension-3.mp3" id="8_1um3w"]
 [ext_resource type="AudioStream" uid="uid://wnnlnxq2ul36" path="res://assets/audio/monster-tension-4.mp3" id="9_4i5e7"]
 [ext_resource type="AudioStream" uid="uid://j0riv1bujyw1" path="res://assets/audio/monster-tension-5.mp3" id="10_1um3w"]

@@ -85,15 +85,19 @@ script = ExtResource("7_4i5e7")
 [node name="MonsterTension2" type="AudioStreamPlayer" parent="MonsterSounds" unique_id=288892226]
 stream = ExtResource("7_1flk8")
 bus = &"Monster"
+script = ExtResource("7_4i5e7")
 
 [node name="MonsterTension3" type="AudioStreamPlayer" parent="MonsterSounds" unique_id=37554402]
 stream = ExtResource("8_1um3w")
 bus = &"Monster"
+script = ExtResource("7_4i5e7")
 
 [node name="MonsterTension4" type="AudioStreamPlayer" parent="MonsterSounds" unique_id=1447821107]
 stream = ExtResource("9_4i5e7")
 bus = &"Monster"
+script = ExtResource("7_4i5e7")
 
 [node name="MonsterTension5" type="AudioStreamPlayer" parent="MonsterSounds" unique_id=1271175137]
 stream = ExtResource("10_1um3w")
 bus = &"Monster"
+script = ExtResource("7_4i5e7")

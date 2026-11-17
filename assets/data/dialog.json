@@ -23,6 +23,38 @@
   },
   {
     "type": "dialog",
+    "text": "Oh well. Maybe it was just the building settling."
+  },
+  {
+    "type": "typing",
+    "text": "Random stupid buzzword business logic gross."
+  },
+  {
+    "type": "typing",
+    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+    "sound": "MonsterTension2",
+    "closeness": 0.3
+  },
+  {
+    "type": "typing",
+    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+    "sound": "MonsterTension3",
+    "closeness": 0.4
+  },
+  {
+    "type": "typing",
+    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+    "sound": "MonsterTension4",
+    "closeness": 0.5
+  },
+  {
+    "type": "typing",
+    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+    "sound": "MonsterTension5",
+    "closeness": 0.9
+  },
+  {
+    "type": "dialog",
     "text": "[color=red]Yes boss :)[/color]"
   }
 ]

@@ -81,10 +81,6 @@ bus = &"SFX"
 stream = ExtResource("6_op4kn")
 bus = &"Monster"
 script = ExtResource("7_4i5e7")
-quiet_volume = -6.0
-
-[node name="Timer" type="Timer" parent="MonsterSounds/MonsterTension1" unique_id=366253603]
-one_shot = true
 
 [node name="MonsterTension2" type="AudioStreamPlayer" parent="MonsterSounds" unique_id=288892226]
 stream = ExtResource("7_1flk8")

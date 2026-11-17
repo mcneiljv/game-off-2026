@@ -106,8 +106,8 @@ func _set_game_state() -> void:
 
 func _get_sound_data() -> void:
 	if dialog_dict.has("sound") and dialog_dict.has("closeness"):
+		monster_tension_1.set_volume(dialog_dict.get("closeness"))
 		print("sound", dialog_dict.get("sound"))
-		print("closeness", dialog_dict.get("closeness"))
 
 
 func _change_text_block() -> void:

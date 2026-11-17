@@ -17,6 +17,7 @@ var last_block_index: int = parsed_dialog.size() - 1 if parsed_dialog else 0
 var current_game_state: GameState = GameState.TYPING
 var last_key_pressed: Keys = Keys.NONE
 var selected_dialog_block: int = 0
+var dialog_dict: Dictionary = parsed_dialog[selected_dialog_block]
 
 @onready var dialog_box_node: PanelContainer = $DialogBox
 @onready var dialog_label_node: Monitor = %DialogLabel
@@ -40,7 +41,8 @@ func _ready() -> void:
 	dialog_label_node.text_fully_built.connect(_text_finished)
 
 	# Shared change text block functionality for both nodes
-	_current_selected_node().change_text_block(parsed_dialog[selected_dialog_block].text)
+	_current_selected_node().change_text_block(dialog_dict.text)
+	_get_sound_data()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -95,18 +97,26 @@ func _current_selected_node() -> Node:
 
 
 func _set_game_state() -> void:
-	if parsed_dialog[selected_dialog_block].type == "typing":
+	if dialog_dict.type == "typing":
 		current_game_state = GameState.TYPING
 		dialog_box_node.visible = false
-	if parsed_dialog[selected_dialog_block].type == "dialog":
+	if dialog_dict.type == "dialog":
 		current_game_state = GameState.DIALOG
+
+
+func _get_sound_data() -> void:
+	if dialog_dict.has("sound") and dialog_dict.has("closeness"):
+		print("sound", dialog_dict.get("sound"))
+		print("closeness", dialog_dict.get("closeness"))
 
 
 func _change_text_block() -> void:
 	if selected_dialog_block < last_block_index:
 		selected_dialog_block += 1
+		dialog_dict = parsed_dialog[selected_dialog_block]
 		_set_game_state()
-		_current_selected_node().change_text_block(parsed_dialog[selected_dialog_block].text)
+		_current_selected_node().change_text_block(dialog_dict.text)
+		_get_sound_data()
 
 
 func _text_finished() -> void:

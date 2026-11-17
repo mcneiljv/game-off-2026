@@ -13,7 +13,13 @@
   },
   {
     "type": "typing",
-    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+    "sound": "MonsterTension1",
+    "closeness": 0.2
+  },
+  {
+    "type": "dialog",
+    "text": "What the hell was that?"
   },
   {
     "type": "dialog",

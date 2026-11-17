@@ -27,9 +27,6 @@ var selected_dialog_block: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	## TODO: Move this; Actually handle tension setting
-	monster_tension_1.set_tension(1.0)
-
 	if not parsed_dialog:
 		push_error("Error parsing dialog JSON.")
 		return

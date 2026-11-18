@@ -114,10 +114,10 @@ func _get_sound_data() -> void:
 	if not dialog_dict.has("sound") and not dialog_dict.has("closeness"):
 		return
 	if dialog_dict.has("sound") and dialog_dict.has("closeness"):
-		var audio_node_path: String = "MonsterSounds/%s" % dialog_dict.get("sound")
-		var monster_audio_node: MonsterAudio = get_node_or_null(audio_node_path)
-		if monster_audio_node:
-			monster_audio_node.play_at_closeness(dialog_dict.get("closeness", 0.4))
+		var audio_node_path: String = dialog_dict.get("sound")
+		var sfx_audio_node: SFXAudio = get_node_or_null(audio_node_path)
+		if sfx_audio_node:
+			sfx_audio_node.play_at_closeness(dialog_dict.get("closeness", 0.4))
 		else:
 			push_error("Audio node not found %s" % dialog_dict.get("sound"))
 

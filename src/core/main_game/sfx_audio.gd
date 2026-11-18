@@ -1,7 +1,7 @@
-class_name MonsterAudio
+class_name SFXAudio
 extends AudioStreamPlayer
 
-@export_group("SFX Tension")
+@export_group("SFX Volume")
 @export var quiet_volume: float = -30.0
 @export var loud_volume: float = -6.0
 

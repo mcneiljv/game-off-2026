@@ -1,15 +1,39 @@
 [
   {
     "type": "dialog",
-    "text": "Man, it's Friday night and I'm working late again. Everyone else left hours ago, but I have a deadline to meet."
+    "text": "Ugh... It's Friday night and I'm working late again. I've just gotta get the code for this bug fix submitted for review, then I can go home."
   },
   {
     "type": "dialog",
-    "text": "I also forgot to eat... Oh well, this should only take about an hour."
+    "text": "It just feels so unfair. Everyone else left hours ago, even my boss."
+  },
+  {
+    "type": "dialog",
+    "text": "I also forgot to eat today..."
+  },
+  {
+    "type": "dialog",
+    "text": "Well, this should only take about an hour. Let's push on."
   },
   {
     "type": "typing",
     "text": "Random stupid buzzword business logic gross."
+  },
+  {
+    "type": "typing",
+    "text": "Random stupid buzzword business logic gross."
+  },
+  {
+    "type": "dialog",
+    "text": "Man, these app breaking bugs keep popping up more and more. It's almost like we should take time to focus on tech debt instead of shoving in new features."
+  },
+  {
+    "type": "dialog",
+    "text": "Heh, that'll never happen."
+  },
+  {
+    "type": "typing",
+    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
   },
   {
     "type": "typing",
@@ -19,40 +43,49 @@
   },
   {
     "type": "dialog",
-    "text": "What the hell was that?",
-    "delay": 3.0
+    "text": "What the hell was that?"
   },
   {
     "type": "dialog",
-    "text": "Oh well. Maybe it was just the building settling."
+    "text": "..."
+  },
+  {
+    "type": "dialog",
+    "text": "I guess it could just be the building settling... Weird."
+  },
+  {
+    "type": "dialog",
+    "text": "I just wanna get this crap done and go home."
   },
   {
     "type": "typing",
     "text": "Random stupid buzzword business logic gross."
   },
   {
-    "type": "typing",
-    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
-    "sound": "MonsterTension2",
-    "closeness": 0.3
+    "type": "dialog",
+    "text": "Spouse: Hey! I thought you'd be home already. Where are you?",
+    "sound": "MobileBuzz",
+    "closeness": 0.6
   },
   {
-    "type": "typing",
-    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
-    "sound": "MonsterTension3",
-    "closeness": 0.4
+    "type": "dialog",
+    "text": "You: Sorry, I forgot to text you. I'm working the graveyard shift again. :/"
   },
   {
-    "type": "typing",
-    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
-    "sound": "MonsterTension4",
-    "closeness": 0.5
+    "type": "dialog",
+    "text": "Spouse: Again?! This is getting ridiculous. It's Friday night.",
+    "sound": "MobileBuzz",
+    "closeness": 0.6
   },
   {
-    "type": "typing",
-    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
-    "sound": "MonsterTension5",
-    "closeness": 0.9
+    "type": "dialog",
+    "text": "I know, but my boss is counting on me to get this bug fixed today. Should be home in a bit."
+  },
+  {
+    "type": "dialog",
+    "text": "Spouse: You said that last time... Ugh. Fine. Just text me when you're leaving.",
+    "sound": "MobileBuzz",
+    "closeness": 0.6
   },
   {
     "type": "dialog",

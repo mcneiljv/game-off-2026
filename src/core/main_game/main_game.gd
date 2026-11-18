@@ -67,7 +67,7 @@ func _button_press(key: Keys) -> void:
 		SceneTransition.transition_to(ENDING_SCREEN)
 		return
 	# NOTE: Valid alternation check. Nothing should go above this unless necessary.
-	if last_key_pressed == key:
+	if last_key_pressed == key and current_game_state == GameState.TYPING:
 		_current_selected_node().show_invalid_key_press()
 		invalid_key_press.emit()
 		return

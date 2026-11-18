@@ -27,8 +27,8 @@ SceneTransition="*uid://vilbkj8iwt1h"
 
 window/size/viewport_width=480
 window/size/viewport_height=270
-window/size/window_width_override=2000
-window/size/window_height_override=1200
+window/size/window_width_override=1920
+window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
 

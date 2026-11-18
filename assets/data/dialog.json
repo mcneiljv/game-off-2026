@@ -19,7 +19,8 @@
   },
   {
     "type": "dialog",
-    "text": "What the hell was that?"
+    "text": "What the hell was that?",
+    "delay": 3.0
   },
   {
     "type": "dialog",

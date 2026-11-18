@@ -18,7 +18,6 @@ var current_game_state: GameState = GameState.TYPING
 var last_key_pressed: Keys = Keys.NONE
 var selected_dialog_block: int = 0
 var dialog_dict: Dictionary = {}
-var is_waiting: bool = false
 
 @onready var dialog_box_node: PanelContainer = $DialogBox
 @onready var dialog_label_node: Monitor = %DialogLabel
@@ -61,7 +60,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _button_press(key: Keys) -> void:
-	if not parsed_dialog or is_waiting:
+	if not parsed_dialog:
 		return
 	if current_game_state == GameState.ENDING:
 		SceneTransition.transition_to(ENDING_SCREEN)
@@ -75,10 +74,7 @@ func _button_press(key: Keys) -> void:
 		if selected_dialog_block == last_block_index:
 			return
 		_change_text_block()
-	if is_waiting:
-		last_key_pressed = key
-		valid_key_press.emit(key)
-		return
+
 	last_key_pressed = key
 	_current_selected_node().advance_reveal(key)
 	if current_game_state == GameState.DIALOG:
@@ -117,6 +113,9 @@ func _get_sound_data() -> void:
 		var audio_node_path: String = dialog_dict.get("sound")
 		var sfx_audio_node: SFXAudio = get_node_or_null(audio_node_path)
 		if sfx_audio_node:
+			var delay: float = dialog_dict.get("delay", 0.0)
+			if delay > 0.0:
+				await get_tree().create_timer(delay).timeout
 			sfx_audio_node.play_at_closeness(dialog_dict.get("closeness", 0.4))
 		else:
 			push_error("Audio node not found %s" % dialog_dict.get("sound"))
@@ -129,16 +128,7 @@ func _change_text_block() -> void:
 	dialog_dict = parsed_dialog[selected_dialog_block]
 	_set_game_state()
 	_get_sound_data()
-
-	var delay: float = dialog_dict.get("delay", 0.0)
-	if delay > 0.0:
-		is_waiting = true
-		await get_tree().create_timer(delay).timeout
-		is_waiting = false
-
 	_current_selected_node().change_text_block(dialog_dict.text)
-	if current_game_state == GameState.DIALOG:
-		dialog_box_node.visible = true
 
 
 func _text_finished() -> void:

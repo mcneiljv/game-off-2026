@@ -39,7 +39,8 @@
     "type": "typing",
     "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
     "sound": "MonsterTension1",
-    "closeness": 0.2
+    "closeness": 0.2,
+    "delay": 1.0
   },
   {
     "type": "dialog",

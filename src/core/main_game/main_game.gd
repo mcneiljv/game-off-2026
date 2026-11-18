@@ -21,7 +21,7 @@ var dialog_dict: Dictionary = {}
 
 @onready var dialog_box_node: PanelContainer = $DialogBox
 @onready var dialog_label_node: Monitor = %DialogLabel
-@onready var monitor_node: Monitor = $Monitor
+@onready var monitor_text_node: Monitor = %MonitorText
 @onready var keyboard_click: AudioStreamPlayer = $KeyboardClick
 
 
@@ -36,8 +36,8 @@ func _ready() -> void:
 	_set_game_state()
 	keyboard_click.set_max_polyphony(max_polyphony)
 
-	# Monitor Node
-	monitor_node.text_fully_built.connect(_text_finished)
+	# Monitor Text Node
+	monitor_text_node.text_fully_built.connect(_text_finished)
 
 	# Dialog Node
 	dialog_label_node.text_fully_built.connect(_text_finished)
@@ -88,14 +88,14 @@ func _button_press(key: Keys) -> void:
 func _current_selected_node() -> Node:
 	match current_game_state:
 		GameState.TYPING:
-			return monitor_node
+			return monitor_text_node
 		GameState.DIALOG:
 			return dialog_label_node
 		GameState.ENDING:
 			# NOTE: This block is never reached
 			# Transition handled in _button_press
 			pass
-	return monitor_node
+	return monitor_text_node
 
 
 func _set_game_state() -> void:

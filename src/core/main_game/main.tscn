@@ -17,23 +17,18 @@
 process_mode = 3
 script = ExtResource("1_h7gx0")
 
-[node name="Monitor" type="RichTextLabel" parent="." unique_id=1103578258]
-offset_right = 140.0
-offset_bottom = 50.0
-theme_override_font_sizes/normal_font_size = 10
-bbcode_enabled = true
-visible_characters = 0
-script = ExtResource("2_h7gx0")
-
 [node name="DialogBox" type="PanelContainer" parent="." unique_id=1341418139]
-anchors_preset = 14
-anchor_top = 0.5
+z_index = 1
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 36.5
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -52.0
+offset_right = -15.0
+offset_bottom = -4.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="DialogBox" unique_id=1255424575]
 layout_mode = 2
@@ -52,20 +47,84 @@ visible_characters = 0
 script = ExtResource("2_h7gx0")
 auto_reveal = true
 
+[node name="Monitor" type="ColorRect" parent="." unique_id=854281901]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -140.0
+offset_top = 5.0
+offset_right = 140.0
+offset_bottom = 180.0
+grow_horizontal = 2
+color = Color(0.7344159, 0.3309044, 0.99901503, 1)
+
+[node name="Screen" type="ColorRect" parent="Monitor" unique_id=1788840300]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -76.0
+offset_right = 128.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MonitorText" type="RichTextLabel" parent="Monitor/Screen" unique_id=1103578258]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -63.0
+offset_right = 117.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "fjdjfdskfjsffjjlkfjlskjflj fdsjfljfldjfsdjflksjlk fjdskjfdslk jlkfsj ljfdlksj ldsj"
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("2_h7gx0")
+
+[node name="TempStand" type="ColorRect" parent="Monitor" unique_id=36820595]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 175.0
+offset_right = 159.0
+offset_bottom = 185.0
+
+[node name="TempKeyboard" type="ColorRect" parent="." unique_id=1455045814]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_top = -76.0
+offset_right = 136.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.73333335, 0.32941177, 1, 1)
+
 [node name="DebugLayer" type="CanvasLayer" parent="." unique_id=428591197]
 process_mode = 3
 layer = 128
 
 [node name="DebugRoot" parent="DebugLayer" unique_id=361554405 instance=ExtResource("1_l4v7s")]
 unique_name_in_owner = true
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -60.0
-offset_right = 10.0
-offset_bottom = -60.0
-grow_vertical = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 5.0
+offset_bottom = 5.0
 
 [node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=1174880499]
 stream = ExtResource("4_xijci")

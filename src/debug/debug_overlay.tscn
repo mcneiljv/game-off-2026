@@ -29,6 +29,7 @@ theme_override_font_sizes/font_size = 10
 text = "Build: "
 
 [node name="DebugInfo" type="Label" parent="MarginContainer/VBoxContainer" unique_id=156420353]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "Developed By RadicalNetrunner"

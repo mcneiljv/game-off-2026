@@ -1,40 +1,5 @@
 [
   {
-    "type": "typing",
-    "text": "Random stupid buzzword business logic gross.",
-    "sound": "MonsterTension1",
-    "closeness": 0.2,
-    "delay": 1.0
-  },
-  {
-    "type": "typing",
-    "text": "Random stupid buzzword business logic gross.",
-    "sound": "MonsterTension2",
-    "closeness": 0.5,
-    "delay": 1.0
-  },
-  {
-    "type": "typing",
-    "text": "Random stupid buzzword business logic gross.",
-    "sound": "MonsterTension3",
-    "closeness": 0.6,
-    "delay": 1.0
-  },
-  {
-    "type": "typing",
-    "text": "Random stupid buzzword business logic gross.",
-    "sound": "MonsterTension4",
-    "closeness": 0.8,
-    "delay": 1.0
-  },
-  {
-    "type": "typing",
-    "text": "Random stupid buzzword business logic gross.",
-    "sound": "MonsterTension5",
-    "closeness": 1.0,
-    "delay": 1.0
-  },
-  {
     "type": "dialog",
     "text": "Ugh... It's Friday night and I'm working late again. I've just gotta get the code for this bug fix submitted for review, then I can go home."
   },

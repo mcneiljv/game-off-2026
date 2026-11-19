@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cf74egesdsklv" path="res://assets/audio/monster-tension-3.mp3" id="8_1um3w"]
 [ext_resource type="AudioStream" uid="uid://wnnlnxq2ul36" path="res://assets/audio/monster-tension-4.mp3" id="9_4i5e7"]
 [ext_resource type="AudioStream" uid="uid://j0riv1bujyw1" path="res://assets/audio/monster-tension-5.mp3" id="10_1um3w"]
+[ext_resource type="AudioStream" uid="uid://c3hregswygdon" path="res://assets/audio/coffee-machine.wav" id="13_drj1i"]
 
 [node name="MainGame" type="Node" unique_id=1457933192]
 process_mode = 3
@@ -163,4 +164,8 @@ script = ExtResource("7_4i5e7")
 [node name="MonsterTension5" type="AudioStreamPlayer" parent="." unique_id=1271175137]
 stream = ExtResource("10_1um3w")
 bus = &"Monster"
+script = ExtResource("7_4i5e7")
+
+[node name="CoffeeBrewing" type="AudioStreamPlayer" parent="." unique_id=655558279]
+stream = ExtResource("13_drj1i")
 script = ExtResource("7_4i5e7")

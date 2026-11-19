@@ -35,7 +35,7 @@
     "type": "typing",
     "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
     "sound": "MonsterTension1",
-    "closeness": 0.5,
+    "closeness": 0.2,
     "delay": 1.0
   },
   {
@@ -66,7 +66,7 @@
   },
   {
     "type": "dialog",
-    "text": "You: Sorry, I forgot to text you. I'm working the graveyard shift again. :/"
+    "text": "You: Sorry, I forgot to text you. I'm working late again. :/"
   },
   {
     "type": "dialog",
@@ -83,6 +83,87 @@
     "text": "Spouse: You said that last time... Ugh. Fine. Just text me when you're leaving.",
     "sound": "MobileBuzz",
     "closeness": 0.6
+  },
+  {
+    "type": "dialog",
+    "text": "My partner is right. I have been working the graveyard shift a lot lately."
+  },
+  {
+    "type": "dialog",
+    "text": "Wait. Is it really even the graveyard shift if I've been here since 9AM?"
+  },
+  {
+    "type": "dialog",
+    "text": "Oh boy... I just realized how tired I am. Not sure how long I can keep burning the midnight oil."
+  },
+  {
+    "type": "dialog",
+    "text": "I'll just make a quick cup of coffee.",
+    "sound": "CoffeeBrewing",
+    "closeness": 0.6
+  },
+  {
+    "type": "dialog",
+    "text": "Alright, back to working on this damn bug."
+  },
+  {
+    "type": "typing",
+    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+  },
+  {
+    "type": "typing",
+    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+    "sound": "MonsterTension2",
+    "closeness": 0.3,
+    "delay": 1.0
+  },
+  {
+    "type": "dialog",
+    "text": "What the...?! There's that strange sound again."
+  },
+  {
+    "type": "dialog",
+    "text": "Maybe it's just one of my co-workers playing a prank on me. They know I'm working late again."
+  },
+  {
+    "type": "dialog",
+    "text": "Very funny guys. Knock it off! I'm trying to do the work you all didn't wanna do."
+  },
+  {
+    "type": "dialog",
+    "text": "Assholes."
+  },
+  {
+    "type": "typing",
+    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+  },
+  {
+    "type": "typing",
+    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+  },
+  {
+    "type": "dialog",
+    "text": "Boss: Hey Finley, just wanted to touch base. Where are we on that bug fix?",
+    "sound": "MobileBuzz",
+    "closeness": 0.6
+  },
+  {
+    "type": "dialog",
+    "text": "Haha! \"We\". As if she's here working on this crap with me."
+  },
+  {
+    "type": "dialog",
+    "text": "You: Hey Karen. I should be finished up within the hour. Sorry for the delay!"
+  },
+  {
+    "type": "dialog",
+    "text": "Boss: Alright, just let me know when you're finished. It's critical that we get this fix in tonight.",
+    "sound": "MobileBuzz",
+    "closeness": 0.6
+  },
+  {
+    "type": "dialog",
+    "text": "You: Can do!"
   },
   {
     "type": "dialog",

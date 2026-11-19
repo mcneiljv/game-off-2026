@@ -139,7 +139,7 @@
   },
   {
     "type": "dialog",
-    "text": "Spouse: You said that last time... Ugh. Fine. Just text me when you're leaving.",
+    "text": "Spouse: You said that last time... Ugh. Fine. Just text me when you're leaving the office.",
     "sound": "MobileBuzz",
     "closeness": 0.6
   },
@@ -164,6 +164,12 @@
   {
     "type": "dialog",
     "text": "Alright, back to working on this damn bug."
+  },
+  {
+    "type": "dialog",
+    "text": "Boss: Just circling back since it's getting late. I have to go to bed soon. Have you submitted your code yet?",
+    "sound": "MobileBuzz",
+    "closeness": 0.6
   },
   {
     "type": "dialog",

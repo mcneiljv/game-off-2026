@@ -1,6 +1,70 @@
 [gd_scene format=3 uid="uid://dv4effx2wg27c"]
 
 [ext_resource type="Script" uid="uid://b5brpwa2pgcfd" path="res://src/core/main_game/title_screen.gd" id="1_nn47b"]
+[ext_resource type="FontFile" uid="uid://cx7rbf4rfsf3m" path="res://assets/fonts/RubikIso-Regular.ttf" id="2_3iqoy"]
+[ext_resource type="AudioStream" uid="uid://bnpq1pqoc5wqa" path="res://assets/audio/keyboard-key.wav" id="3_kn8co"]
+[ext_resource type="FontFile" uid="uid://cn2etv4pp8cww" path="res://assets/fonts/Roboto-VariableFont_wdth,wght.ttf" id="4_6e63d"]
+
+[sub_resource type="Animation" id="Animation_3iqoy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_kn8co"]
+resource_name = "float"
+length = 2.4000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, true, true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6e63d"]
+_data = {
+&"RESET": SubResource("Animation_3iqoy"),
+&"float": SubResource("Animation_kn8co")
+}
 
 [node name="TitleScreen" type="Node" unique_id=968162135]
 script = ExtResource("1_nn47b")
@@ -17,21 +81,47 @@ custom_minimum_size = Vector2(480, 270)
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="VBoxContainer/ColorRect" unique_id=941094561]
-layout_mode = 1
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/ColorRect" unique_id=702978775]
+root_node = NodePath("Tile")
+libraries/ = SubResource("AnimationLibrary_6e63d")
+autoplay = &"float"
+
+[node name="Tile" type="Label" parent="VBoxContainer/ColorRect/AnimationPlayer" unique_id=941094561]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.5
-offset_top = -11.5
-offset_right = 39.5
-offset_bottom = 11.5
+offset_left = -132.5
+offset_top = -30.0
+offset_right = 132.5
+offset_bottom = 30.00122
 grow_horizontal = 2
 grow_vertical = 2
-text = "DEADLINE
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3iqoy")
+theme_override_font_sizes/font_size = 50
+text = "DEADLINE"
+horizontal_alignment = 1
 
-Press Either Shift to Proceed
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/ColorRect/AnimationPlayer" unique_id=117889196]
+stream = ExtResource("3_kn8co")
+bus = &"SFX"
+
+[node name="Instructions" type="Label" parent="VBoxContainer/ColorRect" unique_id=761182124]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -129.0
+offset_top = -49.0
+offset_right = 129.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_6e63d")
+theme_override_font_sizes/font_size = 12
+text = "Press Either Shift to Proceed
 Headphones Greatly Encouraged!"
 horizontal_alignment = 1

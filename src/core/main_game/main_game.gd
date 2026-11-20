@@ -18,6 +18,7 @@ var current_game_state: GameState = GameState.TYPING
 var last_key_pressed: Keys = Keys.NONE
 var selected_dialog_block: int = 0
 var dialog_dict: Dictionary = {}
+var is_waiting: bool = false
 
 @onready var dialog_box_node: PanelContainer = $DialogBox
 @onready var dialog_label_node: Monitor = %DialogLabel
@@ -44,7 +45,7 @@ func _ready() -> void:
 
 	# Shared change text block functionality for both nodes
 	_current_selected_node().change_text_block(dialog_dict.text)
-	_get_sound_data()
+	_play_block_sound()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -63,6 +64,8 @@ func _button_press(key: Keys) -> void:
 	if not parsed_dialog:
 		return
 	if current_game_state == GameState.ENDING:
+		if is_waiting:
+			return
 		SceneTransition.transition_to(ENDING_SCREEN)
 		return
 	# NOTE: Valid alternation check. Nothing should go above this unless necessary.
@@ -71,10 +74,9 @@ func _button_press(key: Keys) -> void:
 		invalid_key_press.emit()
 		return
 	if _current_selected_node().is_text_populated:
-		if selected_dialog_block == last_block_index:
+		if is_waiting or selected_dialog_block == last_block_index:
 			return
 		_change_text_block()
-
 	last_key_pressed = key
 	_current_selected_node().advance_reveal(key)
 	if current_game_state == GameState.DIALOG:
@@ -106,19 +108,25 @@ func _set_game_state() -> void:
 		current_game_state = GameState.DIALOG
 
 
-func _get_sound_data() -> void:
-	if not dialog_dict.has("sound") and not dialog_dict.has("closeness"):
+func _play_block_sound() -> void:
+	if not dialog_dict.has("sound"):
 		return
-	if dialog_dict.has("sound") and dialog_dict.has("closeness"):
-		var audio_node_path: String = dialog_dict.get("sound")
-		var sfx_audio_node: SFXAudio = get_node_or_null(audio_node_path)
-		if sfx_audio_node:
-			var delay: float = dialog_dict.get("delay", 0.0)
-			if delay > 0.0:
-				await get_tree().create_timer(delay).timeout
-			sfx_audio_node.play_at_closeness(dialog_dict.get("closeness", 0.4))
-		else:
-			push_error("Audio node not found %s" % dialog_dict.get("sound"))
+	var sound_path: String = dialog_dict.get("sound")
+	var closeness: float = dialog_dict.get("closeness", 0.4)
+	var delay: float = dialog_dict.get("delay", 0.0)
+
+	var sfx_audio_node: SFXAudio = get_node_or_null(sound_path)
+	if not sfx_audio_node:
+		push_error("Audio node not found %s" % sound_path)
+		return
+
+	is_waiting = true
+	if delay > 0.0:
+		await get_tree().create_timer(delay).timeout
+	sfx_audio_node.play_at_closeness(closeness)
+	if sfx_audio_node.playing:
+		await sfx_audio_node.finished
+	is_waiting = false
 
 
 func _change_text_block() -> void:
@@ -127,8 +135,8 @@ func _change_text_block() -> void:
 	selected_dialog_block += 1
 	dialog_dict = parsed_dialog[selected_dialog_block]
 	_set_game_state()
-	_get_sound_data()
 	_current_selected_node().change_text_block(dialog_dict.text)
+	_play_block_sound()
 
 
 func _text_finished() -> void:

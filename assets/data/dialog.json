@@ -35,8 +35,7 @@
     "type": "typing",
     "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
     "sound": "MonsterTension1",
-    "closeness": 0.2,
-    "delay": 1.0
+    "closeness": 0.2
   },
   {
     "type": "dialog",
@@ -157,9 +156,9 @@
   },
   {
     "type": "dialog",
-    "text": "I'll just make a quick cup of coffee.",
-    "sound": "CoffeeBrewing",
-    "closeness": 0.6
+    "text": "I'll just pour a quick cup of coffee.",
+    "sound": "CoffeePour",
+    "closeness": 0.8
   },
   {
     "type": "dialog",

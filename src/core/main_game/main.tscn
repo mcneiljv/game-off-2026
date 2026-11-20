@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cf74egesdsklv" path="res://assets/audio/monster-tension-3.mp3" id="8_1um3w"]
 [ext_resource type="AudioStream" uid="uid://wnnlnxq2ul36" path="res://assets/audio/monster-tension-4.mp3" id="9_4i5e7"]
 [ext_resource type="AudioStream" uid="uid://j0riv1bujyw1" path="res://assets/audio/monster-tension-5.mp3" id="10_1um3w"]
-[ext_resource type="AudioStream" uid="uid://c3hregswygdon" path="res://assets/audio/coffee-machine.wav" id="13_drj1i"]
+[ext_resource type="AudioStream" uid="uid://cjk5oirvgdeki" path="res://assets/audio/coffee-pour.mp3" id="13_drj1i"]
 
 [node name="MainGame" type="Node" unique_id=1457933192]
 process_mode = 3
@@ -25,20 +25,20 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 15.0
-offset_top = -52.0
+offset_top = -70.0
 offset_right = -15.0
-offset_bottom = -4.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="DialogBox" unique_id=1255424575]
+[node name="MarginLabel" type="MarginContainer" parent="DialogBox" unique_id=1255424575]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="DialogLabel" type="RichTextLabel" parent="DialogBox/MarginContainer" unique_id=1863526824]
+[node name="DialogLabel" type="RichTextLabel" parent="DialogBox/MarginLabel" unique_id=1863526824]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 10
@@ -47,6 +47,16 @@ scroll_active = false
 visible_characters = 0
 script = ExtResource("2_h7gx0")
 auto_reveal = true
+
+[node name="TextEndIndicator" type="ColorRect" parent="DialogBox" unique_id=1458292643]
+unique_name_in_owner = true
+visible = false
+custom_maximum_size = Vector2(10, 10)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(225, 42)
+offset_transform_visual_only = false
+color = Color(0.1296, 0.26736015, 0.72, 1)
 
 [node name="Monitor" type="ColorRect" parent="." unique_id=854281901]
 anchors_preset = 5
@@ -166,6 +176,6 @@ stream = ExtResource("10_1um3w")
 bus = &"Monster"
 script = ExtResource("7_4i5e7")
 
-[node name="CoffeeBrewing" type="AudioStreamPlayer" parent="." unique_id=655558279]
+[node name="CoffeePour" type="AudioStreamPlayer" parent="." unique_id=655558279]
 stream = ExtResource("13_drj1i")
 script = ExtResource("7_4i5e7")

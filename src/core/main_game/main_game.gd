@@ -23,6 +23,7 @@ var is_waiting: bool = false
 @onready var dialog_box_node: PanelContainer = $DialogBox
 @onready var dialog_label_node: Monitor = %DialogLabel
 @onready var monitor_text_node: Monitor = %MonitorText
+@onready var text_end_indicator_node: ColorRect = %TextEndIndicator
 @onready var keyboard_click: AudioStreamPlayer = $KeyboardClick
 
 
@@ -127,6 +128,8 @@ func _play_block_sound() -> void:
 	if sfx_audio_node.playing:
 		await sfx_audio_node.finished
 	is_waiting = false
+	if current_game_state == GameState.DIALOG:
+		text_end_indicator_node.visible = true
 
 
 func _change_text_block() -> void:
@@ -137,8 +140,15 @@ func _change_text_block() -> void:
 	_set_game_state()
 	_current_selected_node().change_text_block(dialog_dict.text)
 	_play_block_sound()
+	text_end_indicator_node.visible = false
 
 
 func _text_finished() -> void:
+	if (
+		current_game_state == GameState.DIALOG
+		and not is_waiting
+		and text_end_indicator_node.visible == false
+	):
+		text_end_indicator_node.visible = true
 	if selected_dialog_block == last_block_index:
 		current_game_state = GameState.ENDING

@@ -2,68 +2,68 @@
 
 [ext_resource type="Script" uid="uid://b5brpwa2pgcfd" path="res://src/core/main_game/title_screen.gd" id="1_nn47b"]
 [ext_resource type="FontFile" uid="uid://cx7rbf4rfsf3m" path="res://assets/fonts/RubikIso-Regular.ttf" id="2_3iqoy"]
-[ext_resource type="AudioStream" uid="uid://bnpq1pqoc5wqa" path="res://assets/audio/keyboard-key.wav" id="3_kn8co"]
-[ext_resource type="FontFile" uid="uid://cn2etv4pp8cww" path="res://assets/fonts/Roboto-VariableFont_wdth,wght.ttf" id="4_6e63d"]
+[ext_resource type="FontFile" uid="uid://1psixc77vck8" path="res://assets/fonts/FrancoisOne-Regular.ttf" id="3_kn8co"]
 
-[sub_resource type="Animation" id="Animation_3iqoy"]
+[sub_resource type="Animation" id="Animation_kn8co"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_characters")
+tracks/0/path = NodePath("AnimationPlayer/PressStart:theme_override_colors/font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [-1]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../AudioStreamPlayer:playing")
+tracks/1/path = NodePath("AnimationPlayer/Headphones:theme_override_colors/font_color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_kn8co"]
-resource_name = "float"
-length = 2.4000000000000004
+[sub_resource type="Animation" id="Animation_6e63d"]
+resource_name = "press_start"
+length = 1.5
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_characters")
+tracks/0/path = NodePath("AnimationPlayer/PressStart:theme_override_colors/font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+"times": PackedFloat32Array(0, 0.75, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../AudioStreamPlayer:playing")
+tracks/1/path = NodePath("AnimationPlayer/Headphones:theme_override_colors/font_color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [true, true, true, true, true, true, true, true]
+"times": PackedFloat32Array(0, 0.75, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6e63d"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2bx83"]
 _data = {
-&"RESET": SubResource("Animation_3iqoy"),
-&"float": SubResource("Animation_kn8co")
+&"RESET": SubResource("Animation_kn8co"),
+&"press_start": SubResource("Animation_6e63d")
 }
 
 [node name="TitleScreen" type="Node" unique_id=968162135]
@@ -76,17 +76,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer" unique_id=1606510675]
+[node name="BackgroundColor" type="ColorRect" parent="VBoxContainer" unique_id=1606510675]
 custom_minimum_size = Vector2(480, 270)
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/ColorRect" unique_id=702978775]
-root_node = NodePath("Tile")
-libraries/ = SubResource("AnimationLibrary_6e63d")
-autoplay = &"float"
-
-[node name="Tile" type="Label" parent="VBoxContainer/ColorRect/AnimationPlayer" unique_id=941094561]
+[node name="Tile" type="Label" parent="VBoxContainer/BackgroundColor" unique_id=941094561]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -104,11 +100,48 @@ theme_override_font_sizes/font_size = 50
 text = "DEADLINE"
 horizontal_alignment = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/ColorRect/AnimationPlayer" unique_id=117889196]
-stream = ExtResource("3_kn8co")
-bus = &"SFX"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/BackgroundColor" unique_id=275306066]
+libraries/ = SubResource("AnimationLibrary_2bx83")
+autoplay = &"press_start"
 
-[node name="Instructions" type="Label" parent="VBoxContainer/ColorRect" unique_id=761182124]
+[node name="PressStart" type="Label" parent="VBoxContainer/BackgroundColor/AnimationPlayer" unique_id=761182124]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -129.0
+offset_top = -92.0
+offset_right = 129.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_kn8co")
+theme_override_font_sizes/font_size = 12
+text = "PUSH SHIFT
+"
+horizontal_alignment = 1
+
+[node name="Headphones" type="Label" parent="VBoxContainer/BackgroundColor/AnimationPlayer" unique_id=1002059987]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -77.0
+offset_right = 130.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_kn8co")
+theme_override_font_sizes/font_size = 7
+text = "Headphones Encouraged"
+horizontal_alignment = 1
+
+[node name="Copyright" type="Label" parent="VBoxContainer/BackgroundColor" unique_id=792777711]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -116,12 +149,12 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -129.0
-offset_top = -49.0
+offset_top = -35.0
 offset_right = 129.0
+offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("4_6e63d")
-theme_override_font_sizes/font_size = 12
-text = "Press Either Shift to Proceed
-Headphones Greatly Encouraged!"
+theme_override_fonts/font = ExtResource("3_kn8co")
+theme_override_font_sizes/font_size = 7
+text = "© 2026 Jamie McNeil"
 horizontal_alignment = 1

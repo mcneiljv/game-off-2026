@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var animation_player: AnimationPlayer = $ColorRect/AnimationPlayer
+@onready var transition_sfx: AudioStreamPlayer = $TransitionSFX
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,8 +9,10 @@ func _ready() -> void:
 	_fade_backwards()
 
 
-func transition_to(next_scene: PackedScene) -> void:
-	# Plays the fade animation and wait until it finishes
+func transition_to(next_scene: PackedScene, is_from_start_screen: bool = false) -> void:
+	if is_from_start_screen:
+		transition_sfx.play()
+	# Play the fade animation and wait until it finishes
 	animation_player.play("fade")
 	await animation_player.animation_finished
 	# Changes the scene

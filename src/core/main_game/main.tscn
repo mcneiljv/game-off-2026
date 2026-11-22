@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d0njw65b6v505" path="res://src/core/main_game/main_game.gd" id="1_h7gx0"]
 [ext_resource type="PackedScene" uid="uid://cnih6qr78gvty" path="res://src/debug/debug_overlay.tscn" id="1_l4v7s"]
 [ext_resource type="Script" uid="uid://bj4w8kp4t2elj" path="res://src/core/main_game/monitor.gd" id="2_h7gx0"]
+[ext_resource type="Texture2D" uid="uid://3fbml673pnoh" path="res://assets/art/keyboard-sprite-sheet.png" id="3_iu1vd"]
 [ext_resource type="AudioStream" uid="uid://cf0bm77ho67pp" path="res://assets/audio/ambience.wav" id="4_drj1i"]
 [ext_resource type="AudioStream" uid="uid://bnpq1pqoc5wqa" path="res://assets/audio/keyboard-key.wav" id="5_yuwmb"]
 [ext_resource type="AudioStream" uid="uid://3d4r3q2ochpr" path="res://assets/audio/monster-tension-1.mp3" id="6_op4kn"]
@@ -111,19 +112,37 @@ offset_top = 175.0
 offset_right = 159.0
 offset_bottom = 185.0
 
-[node name="TempKeyboard" type="ColorRect" parent="." unique_id=1455045814]
+[node name="Keyboard" type="Control" parent="." unique_id=35900047]
+layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -145.0
-offset_top = -76.0
-offset_right = 145.0
-offset_bottom = -16.0
+offset_left = -100.0
+offset_top = -78.0
+offset_right = 100.0
+offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0.73333335, 0.32941177, 1, 1)
+
+[node name="Neutral" type="Sprite2D" parent="Keyboard" unique_id=1264228746]
+texture = ExtResource("3_iu1vd")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 200, 64)
+
+[node name="Left" type="Sprite2D" parent="Keyboard" unique_id=1375093927]
+texture = ExtResource("3_iu1vd")
+centered = false
+region_enabled = true
+region_rect = Rect2(200, 0, 200, 64)
+
+[node name="Right" type="Sprite2D" parent="Keyboard" unique_id=1659992174]
+texture = ExtResource("3_iu1vd")
+centered = false
+region_enabled = true
+region_rect = Rect2(400, 0, 200, 64)
 
 [node name="DebugLayer" type="CanvasLayer" parent="." unique_id=428591197]
 process_mode = 3

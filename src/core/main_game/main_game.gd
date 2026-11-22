@@ -25,6 +25,7 @@ var is_waiting: bool = false
 @onready var monitor_text_node: Monitor = %MonitorText
 @onready var text_end_indicator_node: ColorRect = %TextEndIndicator
 @onready var keyboard_click: AudioStreamPlayer = $KeyboardClick
+@onready var keyboard_node: Keyboard = $Keyboard/Sprite
 
 
 # Called when the node enters the scene tree for the first time.
@@ -104,9 +105,11 @@ func _current_selected_node() -> Node:
 func _set_game_state() -> void:
 	if dialog_dict.type == "typing":
 		current_game_state = GameState.TYPING
+		keyboard_node.set_animation_active(true)
 		dialog_box_node.visible = false
 	if dialog_dict.type == "dialog":
 		current_game_state = GameState.DIALOG
+		keyboard_node.set_animation_active(false)
 
 
 func _play_block_sound() -> void:
@@ -152,3 +155,4 @@ func _text_finished() -> void:
 		text_end_indicator_node.visible = true
 	if selected_dialog_block == last_block_index:
 		current_game_state = GameState.ENDING
+		keyboard_node.set_animation_active(false)

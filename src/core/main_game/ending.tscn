@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://djf06t30qkb5k"]
 
+[ext_resource type="FontFile" uid="uid://1psixc77vck8" path="res://assets/fonts/FrancoisOne-Regular.ttf" id="1_tughf"]
+
 [node name="Ending" type="Node" unique_id=133743790]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=973939180]
@@ -22,4 +24,5 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_tughf")
 text = "Thanks for playing!"

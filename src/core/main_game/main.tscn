@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d0njw65b6v505" path="res://src/core/main_game/main_game.gd" id="1_h7gx0"]
 [ext_resource type="PackedScene" uid="uid://cnih6qr78gvty" path="res://src/debug/debug_overlay.tscn" id="1_l4v7s"]
 [ext_resource type="Script" uid="uid://bj4w8kp4t2elj" path="res://src/core/main_game/monitor.gd" id="2_h7gx0"]
+[ext_resource type="Texture2D" uid="uid://wy3e8hm53sxc" path="res://assets/art/monitor.png" id="3_0ndoo"]
 [ext_resource type="Texture2D" uid="uid://3fbml673pnoh" path="res://assets/art/keyboard-sprite-sheet.png" id="3_iu1vd"]
 [ext_resource type="AudioStream" uid="uid://cf0bm77ho67pp" path="res://assets/audio/ambience.wav" id="4_drj1i"]
 [ext_resource type="Script" uid="uid://bm0r88njpfl0p" path="res://src/core/main_game/keyboard.gd" id="4_hn61g"]
@@ -60,58 +61,33 @@ offset_transform_position = Vector2(225, 42)
 offset_transform_visual_only = false
 color = Color(0.1296, 0.26736015, 0.72, 1)
 
-[node name="Monitor" type="ColorRect" parent="." unique_id=854281901]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -140.0
-offset_top = 5.0
-offset_right = 140.0
-offset_bottom = 180.0
-grow_horizontal = 2
-color = Color(0.7344159, 0.3309044, 0.99901503, 1)
+[node name="Monitor" type="Sprite2D" parent="." unique_id=1185302261]
+position = Vector2(240, 96)
+texture = ExtResource("3_0ndoo")
 
-[node name="Screen" type="ColorRect" parent="Monitor" unique_id=1788840300]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+[node name="MarginContainer" type="MarginContainer" parent="Monitor" unique_id=210950568]
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = -76.0
-offset_right = 128.0
-offset_bottom = 68.0
+offset_left = -120.0
+offset_top = -166.5
+offset_right = -160.0
+offset_bottom = -66.5
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="MonitorText" type="RichTextLabel" parent="Monitor/Screen" unique_id=1103578258]
+[node name="MonitorText" type="RichTextLabel" parent="Monitor/MarginContainer" unique_id=1103578258]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -118.0
-offset_top = -63.0
-offset_right = 117.0
-offset_bottom = 61.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 visible_characters = 0
-visible_ratio = 0.0
 script = ExtResource("2_h7gx0")
-
-[node name="TempStand" type="ColorRect" parent="Monitor" unique_id=36820595]
-layout_mode = 0
-offset_left = 119.0
-offset_top = 175.0
-offset_right = 159.0
-offset_bottom = 185.0
 
 [node name="Keyboard" type="Control" parent="." unique_id=35900047]
 layout_mode = 3

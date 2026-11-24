@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d0njw65b6v505" path="res://src/core/main_game/main_game.gd" id="1_h7gx0"]
 [ext_resource type="PackedScene" uid="uid://cnih6qr78gvty" path="res://src/debug/debug_overlay.tscn" id="1_l4v7s"]
 [ext_resource type="Script" uid="uid://bj4w8kp4t2elj" path="res://src/core/main_game/monitor.gd" id="2_h7gx0"]
+[ext_resource type="Texture2D" uid="uid://cp78rxnebxxg1" path="res://assets/art/background.png" id="2_v63mv"]
 [ext_resource type="FontFile" uid="uid://1psixc77vck8" path="res://assets/fonts/FrancoisOne-Regular.ttf" id="2_whnhu"]
 [ext_resource type="Texture2D" uid="uid://dk5pvy2cx6qr4" path="res://assets/art/monitor.png" id="3_0ndoo"]
 [ext_resource type="Texture2D" uid="uid://3fbml673pnoh" path="res://assets/art/keyboard-sprite-sheet.png" id="3_iu1vd"]
@@ -22,6 +23,10 @@
 [node name="MainGame" type="Node" unique_id=1457933192]
 process_mode = 3
 script = ExtResource("1_h7gx0")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=290231498]
+position = Vector2(240, 135)
+texture = ExtResource("2_v63mv")
 
 [node name="DialogBox" type="PanelContainer" parent="." unique_id=1341418139]
 z_index = 1

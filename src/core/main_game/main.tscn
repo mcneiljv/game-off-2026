@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://wnnlnxq2ul36" path="res://assets/audio/monster-tension-4.mp3" id="9_4i5e7"]
 [ext_resource type="AudioStream" uid="uid://j0riv1bujyw1" path="res://assets/audio/monster-tension-5.mp3" id="10_1um3w"]
 [ext_resource type="AudioStream" uid="uid://cjk5oirvgdeki" path="res://assets/audio/coffee-pour.mp3" id="13_drj1i"]
+[ext_resource type="Script" uid="uid://1hnfah7fpp5c" path="res://src/core/main_game/coffee_pour.gd" id="21_grr58"]
 
 [node name="MainGame" type="Node" unique_id=1457933192]
 process_mode = 3
@@ -72,6 +73,8 @@ offset_transform_visual_only = false
 color = Color(0.1296, 0.26736015, 0.72, 1)
 
 [node name="Coffee" type="Sprite2D" parent="." unique_id=359715541]
+unique_name_in_owner = true
+visible = false
 position = Vector2(423, 205)
 texture = ExtResource("5_ba8ow")
 
@@ -128,7 +131,6 @@ script = ExtResource("4_hn61g")
 [node name="DebugLayer" type="CanvasLayer" parent="." unique_id=428591197]
 process_mode = 3
 layer = 128
-visible = false
 
 [node name="DebugRoot" parent="DebugLayer" unique_id=361554405 instance=ExtResource("1_l4v7s")]
 unique_name_in_owner = true
@@ -178,4 +180,4 @@ script = ExtResource("7_4i5e7")
 
 [node name="CoffeePour" type="AudioStreamPlayer" parent="." unique_id=655558279]
 stream = ExtResource("13_drj1i")
-script = ExtResource("7_4i5e7")
+script = ExtResource("21_grr58")

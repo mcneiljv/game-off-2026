@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://x7yjlo0iedxj" path="res://assets/fonts/RobotoMono-VariableFont_wght.ttf" id="4_b3g11"]
 [ext_resource type="AudioStream" uid="uid://cf0bm77ho67pp" path="res://assets/audio/ambience.wav" id="4_drj1i"]
 [ext_resource type="Script" uid="uid://bm0r88njpfl0p" path="res://src/core/main_game/keyboard.gd" id="4_hn61g"]
+[ext_resource type="Texture2D" uid="uid://crqwq5ko3x07m" path="res://assets/art/coffee.png" id="5_ba8ow"]
 [ext_resource type="AudioStream" uid="uid://bnpq1pqoc5wqa" path="res://assets/audio/keyboard-key.wav" id="5_yuwmb"]
 [ext_resource type="AudioStream" uid="uid://3d4r3q2ochpr" path="res://assets/audio/monster-tension-1.mp3" id="6_op4kn"]
 [ext_resource type="AudioStream" uid="uid://dsay8e1komrsd" path="res://assets/audio/mobile-buzz.wav" id="6_q3f53"]
@@ -29,6 +30,7 @@ position = Vector2(240, 135)
 texture = ExtResource("2_v63mv")
 
 [node name="DialogBox" type="PanelContainer" parent="." unique_id=1341418139]
+visible = false
 z_index = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -69,6 +71,10 @@ offset_transform_position = Vector2(225, 42)
 offset_transform_visual_only = false
 color = Color(0.1296, 0.26736015, 0.72, 1)
 
+[node name="Coffee" type="Sprite2D" parent="." unique_id=359715541]
+position = Vector2(423, 205)
+texture = ExtResource("5_ba8ow")
+
 [node name="Monitor" type="Sprite2D" parent="." unique_id=1185302261]
 position = Vector2(240, 96)
 texture = ExtResource("3_0ndoo")
@@ -105,14 +111,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -100.0
+offset_left = -131.0
 offset_top = -78.0
-offset_right = 100.0
+offset_right = 69.0
 offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Sprite" type="Sprite2D" parent="Keyboard" unique_id=1264228746]
+position = Vector2(-1, 0)
 texture = ExtResource("3_iu1vd")
 centered = false
 hframes = 3
@@ -121,6 +128,7 @@ script = ExtResource("4_hn61g")
 [node name="DebugLayer" type="CanvasLayer" parent="." unique_id=428591197]
 process_mode = 3
 layer = 128
+visible = false
 
 [node name="DebugRoot" parent="DebugLayer" unique_id=361554405 instance=ExtResource("1_l4v7s")]
 unique_name_in_owner = true

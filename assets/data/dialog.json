@@ -17,7 +17,7 @@
   },
   {
     "type": "typing",
-    "text": "Random stupid buzzword business logic gross. [pulse freq=5.0 color=#ffffff40 ease=-5.0]|[/pulse]"
+    "text": "// TODO: refactor before code freeze\nfunction submitReport(user) {\n  if (!user) return null;\n  return synergize(user.data);\n}"
   },
   {
     "type": "dialog",
@@ -29,11 +29,11 @@
   },
   {
     "type": "typing",
-    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+    "text": "const MAX_RETRIES = 3;\nlet attempts = 0;\n\nasync function saveOrder(order) {\n  attempts++;\n  return await api.post(order);\n}"
   },
   {
     "type": "typing",
-    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+    "text": "def validate_input(data):\n    # TODO: leverage existing schema\n    if data is None:\n        raise ValueError('empty')\n    return data.strip()",
     "sound": "MonsterTension1",
     "closeness": 0.2
   },
@@ -55,7 +55,7 @@
   },
   {
     "type": "typing",
-    "text": "Random stupid buzzword business logic gross."
+    "text": "// ship now, circle back later\nconst hotfix = (bug) => {\n  bug.status = 'resolved';\n  return bug;\n};"
   },
   {
     "type": "dialog",
@@ -83,11 +83,11 @@
   },
   {
     "type": "typing",
-    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+    "text": "const deadline = '11:59 PM';\nlet bandwidth = 0;\n\nwhile (bandwidth < 100) {\n  circleBack(manager);\n}"
   },
   {
     "type": "typing",
-    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+    "text": "<div class='dashboard'>\n  <h1>Synergy Metrics</h1>\n  <p>Moving the needle daily.</p>\n</div>\n<!-- low-hanging fruit -->",
     "sound": "MonsterTension2",
     "closeness": 0.3,
     "delay": 1.0
@@ -110,11 +110,11 @@
   },
   {
     "type": "typing",
-    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+    "text": "def validate_input(data):\n    # TODO: leverage existing schema\n    if data is None:\n        raise ValueError('empty')\n    return data.strip()"
   },
   {
     "type": "typing",
-    "text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+    "text": "// who else is in the building?\nconst alone = true;\nif (alone === true) {\n  console.log('good');\n}\n// ...right?"
   },
   {
     "type": "dialog",
@@ -163,6 +163,14 @@
   {
     "type": "dialog",
     "text": "Alright, back to working on this damn bug."
+  },
+  {
+    "type": "typing",
+    "text": "let bandwidth = 0;\nlet coffee = 0;\n\nwhile (deadline > now) {\n  bandwidth--;\n  coffee++;\n}"
+  },
+  {
+    "type": "typing",
+    "text": "// stakeholder feedback: 'make it pop'\nfunction deepDive(ticket) {\n  ticket.priority = 'critical';\n  ticket.owner = 'me';\n  ticket.sleep = false;\n}"
   },
   {
     "type": "dialog",

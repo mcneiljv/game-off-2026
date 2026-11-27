@@ -1,96 +1,72 @@
 [
   {
     "type": "dialog",
-    "text": "Ugh... It's Friday night and I'm working late again. I've just gotta get the code for this bug fix submitted for review, then I can go home."
+    "text": "Ugh... Working late again. And on a Friday no less!"
   },
   {
     "type": "dialog",
-    "text": "It just feels so unfair. Everyone else left hours ago, even my boss."
+    "text": "I've just gotta get this bug sorted, then I can go home and get some much needed sleep."
   },
   {
     "type": "dialog",
-    "text": "I also forgot to eat today..."
+    "text": "This is so unfair. Everyone else left hours ago, even my boss."
   },
+  { "type": "dialog", "text": "I also haven't eaten since noon..." },
   {
     "type": "dialog",
-    "text": "Well, this should only take about an hour. Let's push on."
+    "text": "But there's no way around it, I have to get this code submitted tonight or I'll risk getting fired."
   },
+  { "type": "typing", "text": "// typing block 1" },
+  {
+    "type": "dialog",
+    "text": "Man, these app breaking bugs keep cropping up more and more. It's almost like we should focus on fixing tech debt instead of shoving in \"Exciting New Features\"."
+  },
+  { "type": "dialog", "text": "Yeah, right. Like that'll ever happen." },
+  { "type": "typing", "text": "// typing block 2" },
+  { "type": "typing", "text": "// typing block 3" },
   {
     "type": "typing",
-    "text": "// TODO: refactor before code freeze\nfunction submitReport(user) {\n  if (!user) return null;\n  return synergize(user.data);\n}"
-  },
-  {
-    "type": "dialog",
-    "text": "Man, these app breaking bugs keep popping up more and more. It's almost like we should take time to focus on tech debt instead of shoving in new features."
-  },
-  {
-    "type": "dialog",
-    "text": "Heh, that'll never happen."
-  },
-  {
-    "type": "typing",
-    "text": "const MAX_RETRIES = 3;\nlet attempts = 0;\n\nasync function saveOrder(order) {\n  attempts++;\n  return await api.post(order);\n}"
-  },
-  {
-    "type": "typing",
-    "text": "def validate_input(data):\n    # TODO: leverage existing schema\n    if data is None:\n        raise ValueError('empty')\n    return data.strip()",
+    "text": "// typing block 4",
     "sound": "MonsterTension1",
-    "closeness": 0.2
+    "closeness": 0.15,
+    "delay": 3.0
   },
-  {
-    "type": "dialog",
-    "text": "What the hell was that?"
-  },
-  {
-    "type": "dialog",
-    "text": "..."
-  },
+  { "type": "dialog", "text": "What the hell was that?!" },
+  { "type": "dialog", "text": "..." },
   {
     "type": "dialog",
     "text": "I guess it could just be the building settling... Weird."
   },
+  { "type": "dialog", "text": "I just wanna get this done and go home." },
+  { "type": "typing", "text": "// typing block 5" },
   {
     "type": "dialog",
-    "text": "I just wanna get this crap done and go home."
-  },
-  {
-    "type": "typing",
-    "text": "// ship now, circle back later\nconst hotfix = (bug) => {\n  bug.status = 'resolved';\n  return bug;\n};"
-  },
-  {
-    "type": "dialog",
-    "text": "Boss: Hey Finley, just wanted to touch base. Where are we on that bug fix?",
+    "text": "Boss: Hey Finley, I just wanted to touch base. Where are we at on that bug fix?",
     "sound": "MobileBuzz",
     "closeness": 0.6
   },
   {
     "type": "dialog",
-    "text": "Haha! \"We\". As if she's here working on this crap with me."
+    "text": "Ha! \"We\". As if she's here working on this crap with me."
   },
   {
     "type": "dialog",
-    "text": "You: Hey Karen. I should be finished up within the hour. Sorry for the delay!"
+    "text": "You: Hey Karen! I should be finished up within an hour. Sorry for the delay!"
   },
   {
     "type": "dialog",
-    "text": "Boss: Alright, just let me know when you're finished. It's critical that we get this fix in tonight.",
+    "text": "Boss: Alright, just let me know when you're finished. It's critical that we get this fix deployed tonight.",
     "sound": "MobileBuzz",
     "closeness": 0.6
   },
-  {
-    "type": "dialog",
-    "text": "You: Can do!"
-  },
+  { "type": "dialog", "text": "You: Can do!" },
+  { "type": "typing", "text": "// typing block 6" },
   {
     "type": "typing",
-    "text": "const deadline = '11:59 PM';\nlet bandwidth = 0;\n\nwhile (bandwidth < 100) {\n  circleBack(manager);\n}"
-  },
-  {
-    "type": "typing",
-    "text": "<div class='dashboard'>\n  <h1>Synergy Metrics</h1>\n  <p>Moving the needle daily.</p>\n</div>\n<!-- low-hanging fruit -->",
+    "text": "// typing block 7",
     "sound": "MonsterTension2",
-    "closeness": 0.3,
-    "delay": 1.0
+    "closeness": 0.35,
+    "delay": 3.0
   },
   {
     "type": "dialog",
@@ -98,27 +74,18 @@
   },
   {
     "type": "dialog",
-    "text": "Maybe it's just one of my co-workers playing a prank on me. They know I'm working late again."
+    "text": "You know, it's probably just one of my co-workers playing a prank on me. Everyone knows I'm here late again."
   },
   {
     "type": "dialog",
-    "text": "Very funny guys. Knock it off! I'm trying to do the work you all didn't wanna do."
+    "text": "Very funny, knock it off! I'm just trying to finish my code so I can leave this damn desk."
   },
+  { "type": "dialog", "text": "Assholes." },
+  { "type": "typing", "text": "// typing block 8" },
+  { "type": "typing", "text": "// typing block 9" },
   {
     "type": "dialog",
-    "text": "Assholes."
-  },
-  {
-    "type": "typing",
-    "text": "def validate_input(data):\n    # TODO: leverage existing schema\n    if data is None:\n        raise ValueError('empty')\n    return data.strip()"
-  },
-  {
-    "type": "typing",
-    "text": "// who else is in the building?\nconst alone = true;\nif (alone === true) {\n  console.log('good');\n}\n// ...right?"
-  },
-  {
-    "type": "dialog",
-    "text": "Spouse: Hey! I thought you'd be home already. Where are you?",
+    "text": "Spouse: Hey, I thought you'd be home already. Where are you?",
     "sound": "MobileBuzz",
     "closeness": 0.6
   },
@@ -138,7 +105,17 @@
   },
   {
     "type": "dialog",
-    "text": "Spouse: You said that last time... Ugh. Fine. Just text me when you're leaving the office.",
+    "text": "Spouse: You said that last time... You haven't been sleeping. I'm worried about your mental health.",
+    "sound": "MobileBuzz",
+    "closeness": 0.6
+  },
+  {
+    "type": "dialog",
+    "text": "You: I promise I'll get some sleep this weekend. I just really have to get this done."
+  },
+  {
+    "type": "dialog",
+    "text": "Spouse: Ugh. Fine. Just text me when you're leaving the office.",
     "sound": "MobileBuzz",
     "closeness": 0.6
   },
@@ -156,30 +133,74 @@
   },
   {
     "type": "dialog",
-    "text": "I'll just pour a quick cup of coffee.",
+    "text": "I'll just make a quick cup of coffee and get back to it.",
     "sound": "CoffeePour",
     "closeness": 0.8
   },
-  {
-    "type": "dialog",
-    "text": "Alright, back to working on this damn bug."
-  },
-  {
-    "type": "typing",
-    "text": "let bandwidth = 0;\nlet coffee = 0;\n\nwhile (deadline > now) {\n  bandwidth--;\n  coffee++;\n}"
-  },
+  { "type": "dialog", "text": "Alright, now back to this damn bug." },
+  { "type": "typing", "text": "// typing block 10" },
+  { "type": "typing", "text": "// typing block 11" },
   {
     "type": "typing",
-    "text": "// stakeholder feedback: 'make it pop'\nfunction deepDive(ticket) {\n  ticket.priority = 'critical';\n  ticket.owner = 'me';\n  ticket.sleep = false;\n}"
+    "text": "// typing block 12",
+    "sound": "MonsterTension3",
+    "closeness": 0.6,
+    "delay": 3.0
+  },
+  { "type": "dialog", "text": "Okay, what the actual hell is happening?!..." },
+  { "type": "dialog", "text": "Now that I think about it..." },
+  {
+    "type": "dialog",
+    "text": "This can't be my co-workers messing with me. The whole building is locked up, and I would've heard them use their keycards to come in."
   },
   {
     "type": "dialog",
-    "text": "Boss: Just circling back since it's getting late. I have to go to bed soon. Have you submitted your code yet?",
+    "text": "I'm probably just hearing things. I've been running on coffee for days. I just wanna be home man..."
+  },
+  { "type": "dialog", "text": "But I'm so close to cranking this out." },
+  {
+    "type": "dialog",
+    "text": "I can't get fired now. The job market is terrible... And I can't go through 10 rounds of coding interviews."
+  },
+  {
+    "type": "dialog",
+    "text": "Just gotta keep drinking this coffee and press on."
+  },
+  { "type": "typing", "text": "// typing block 13" },
+  { "type": "typing", "text": "// typing block 14" },
+  { "type": "typing", "text": "// typing block 15" },
+  {
+    "type": "dialog",
+    "text": "There. Now I just have to make some minor cleanup, push this code and I'm home-free."
+  },
+  { "type": "typing", "text": "// typing block 16" },
+  {
+    "type": "typing",
+    "text": "// typing block 17",
+    "sound": "MonsterTension4",
+    "closeness": 0.85,
+    "delay": 3.0
+  },
+  { "type": "dialog", "text": "Jesus." },
+  { "type": "dialog", "text": "I have to be going crazy." },
+  { "type": "dialog", "text": "Is that sound getting CLOSER?" },
+  { "type": "dialog", "text": "Am I just paranoid?" },
+  { "type": "dialog", "text": "I... I just have to push this code." },
+  { "type": "dialog", "text": "I can't stop now." },
+  { "type": "typing", "text": "// typing block 18" },
+  { "type": "typing", "text": "// typing block 19" },
+  {
+    "type": "typing",
+    "text": "// typing block 20",
+    "sound": "MonsterTension5",
+    "closeness": 1.0,
+    "delay": 3.0
+  },
+  {
+    "type": "dialog",
+    "text": "Boss: Just circling back. It's getting late and I have to go to sleep soon. Have you submitted your code yet?",
     "sound": "MobileBuzz",
     "closeness": 0.6
   },
-  {
-    "type": "dialog",
-    "text": "[color=red]Yes boss :)[/color]"
-  }
+  { "type": "dialog", "text": "[color=red]You: Yes boss. :)[/color]" }
 ]

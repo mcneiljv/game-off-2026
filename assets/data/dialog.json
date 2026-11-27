@@ -78,7 +78,7 @@
   },
   {
     "type": "typing",
-    "text": "let bandwidth = 100;\n\nwhile (deadline > now) {\n  bandwidth--;\n}\n// did something just move?\n// no. keep typing.",
+    "text": "// circle back after go-live\n// circle back after the holidays\n// circle back after I sleep\nfunction circleBack() {\n  return circleBack();\n}",
     "sound": "MonsterTension2",
     "closeness": 0.35,
     "delay": 3.0
@@ -98,7 +98,7 @@
   { "type": "dialog", "text": "Assholes." },
   {
     "type": "typing",
-    "text": "// probably a prank\n// Dave does this every year\nif (coworker.isHiding()) {\n  coworker.lol();\n}\n// ...Dave went home at 5"
+    "text": "// probably a prank\n// Dave does this all the time\nif (coworker.isHiding()) {\n  coworker.lol();\n}\n// ...Dave went home at 5"
   },
   {
     "type": "typing",

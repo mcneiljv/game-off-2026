@@ -78,7 +78,7 @@
   },
   {
     "type": "typing",
-    "text": "// circle back after go-live\n// circle back after the holidays\n// circle back after I sleep\nfunction circleBack() {\n  return circleBack();\n}",
+    "text": "let bandwidth = 100;\n\nwhile (deadline > now) {\n  bandwidth--;\n}\n// bandwidth: 3\n// that can't be right",
     "sound": "MonsterTension2",
     "closeness": 0.35,
     "delay": 3.0

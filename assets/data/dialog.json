@@ -16,17 +16,26 @@
     "type": "dialog",
     "text": "But there's no way around it, I have to get this code submitted tonight or I'll risk getting fired."
   },
-  { "type": "typing", "text": "// typing block 1" },
+  {
+    "type": "typing",
+    "text": "// fix: crash on empty cart\nfunction getTotal(cart) {\n  if (!cart) return 0;\n  return cart.items.length;\n}"
+  },
   {
     "type": "dialog",
     "text": "Man, these app breaking bugs keep cropping up more and more. It's almost like we should focus on fixing tech debt instead of shoving in \"Exciting New Features\"."
   },
   { "type": "dialog", "text": "Yeah, right. Like that'll ever happen." },
-  { "type": "typing", "text": "// typing block 2" },
-  { "type": "typing", "text": "// typing block 3" },
   {
     "type": "typing",
-    "text": "// typing block 4",
+    "text": "// TODO: pay down tech debt\n// ticket open since 2019\nlet techDebt = Infinity;\n\nfunction shipFeature(f) {\n  techDebt += 1;\n}"
+  },
+  {
+    "type": "typing",
+    "text": "def get_session(user):\n    # leverage existing auth\n    if user is None:\n        return None\n    return user.session"
+  },
+  {
+    "type": "typing",
+    "text": "const MAX_RETRIES = 3;\nlet attempts = 0;\n\nasync function save(order) {\n  attempts++;\n  return await api.post(order);\n}",
     "sound": "MonsterTension1",
     "closeness": 0.15,
     "delay": 3.0
@@ -38,7 +47,10 @@
     "text": "I guess it could just be the building settling... Weird."
   },
   { "type": "dialog", "text": "I just wanna get this done and go home." },
-  { "type": "typing", "text": "// typing block 5" },
+  {
+    "type": "typing",
+    "text": "// ship now, circle back later\nconst hotfix = (bug) => {\n  bug.status = 'resolved';\n  return bug;\n};"
+  },
   {
     "type": "dialog",
     "text": "Boss: Hey Finley, I just wanted to touch base. Where are we at on that bug fix?",
@@ -51,7 +63,7 @@
   },
   {
     "type": "dialog",
-    "text": "You: Hey Karen! I should be finished up within an hour. Sorry for the delay!"
+    "text": "You: Hey Karen! I should be finished up within the hour. Sorry for the delay!"
   },
   {
     "type": "dialog",
@@ -60,10 +72,13 @@
     "closeness": 0.6
   },
   { "type": "dialog", "text": "You: Can do!" },
-  { "type": "typing", "text": "// typing block 6" },
   {
     "type": "typing",
-    "text": "// typing block 7",
+    "text": "<div class='dashboard'>\n  <h1>Synergy Metrics</h1>\n  <p>Moving the needle daily.</p>\n</div>\n<!-- low-hanging fruit -->"
+  },
+  {
+    "type": "typing",
+    "text": "let bandwidth = 100;\n\nwhile (deadline > now) {\n  bandwidth--;\n}\n// did something just move?\n// no. keep typing.",
     "sound": "MonsterTension2",
     "closeness": 0.35,
     "delay": 3.0
@@ -81,11 +96,17 @@
     "text": "Very funny, knock it off! I'm just trying to finish my code so I can leave this damn desk."
   },
   { "type": "dialog", "text": "Assholes." },
-  { "type": "typing", "text": "// typing block 8" },
-  { "type": "typing", "text": "// typing block 9" },
+  {
+    "type": "typing",
+    "text": "// probably a prank\n// Dave does this every year\nif (coworker.isHiding()) {\n  coworker.lol();\n}\n// ...Dave went home at 5"
+  },
+  {
+    "type": "typing",
+    "text": "try {\n  submit(fix);\n} catch (err) {\n  // paradigm shift, probably\n  // or the pipes\n  retry();\n}"
+  },
   {
     "type": "dialog",
-    "text": "Spouse: Hey, I thought you'd be home already. Where are you?",
+    "text": "Spouse: Hey Fin, I thought you'd be home already. Where are you?",
     "sound": "MobileBuzz",
     "closeness": 0.6
   },
@@ -138,11 +159,17 @@
     "closeness": 0.8
   },
   { "type": "dialog", "text": "Alright, now back to this damn bug." },
-  { "type": "typing", "text": "// typing block 10" },
-  { "type": "typing", "text": "// typing block 11" },
   {
     "type": "typing",
-    "text": "// typing block 12",
+    "text": "git commit -m 'almost done'\ngit commit -m 'almost done'\ngit commit -m 'almost done'\n# how long have I been here\n# 9AM. it is 11PM. wait"
+  },
+  {
+    "type": "typing",
+    "text": "let sleep = 0;\nlet coffee = 0;\n\nwhile (bug.exists) {\n  coffee++;\n  sleep--;\n}\n// sleep is negative now"
+  },
+  {
+    "type": "typing",
+    "text": "function whoIsThere() {\n  return null;\n}\nwhoIsThere();\nwhoIsThere();\n// null. it keeps returning null\n// something keeps returning",
     "sound": "MonsterTension3",
     "closeness": 0.6,
     "delay": 3.0
@@ -166,32 +193,53 @@
     "type": "dialog",
     "text": "Just gotta keep drinking this coffee and press on."
   },
-  { "type": "typing", "text": "// typing block 13" },
-  { "type": "typing", "text": "// typing block 14" },
-  { "type": "typing", "text": "// typing block 15" },
-  {
-    "type": "dialog",
-    "text": "There. Now I just have to make some minor cleanup, push this code and I'm home-free."
-  },
-  { "type": "typing", "text": "// typing block 16" },
   {
     "type": "typing",
-    "text": "// typing block 17",
+    "text": "if (building.isLocked()) {\n  // keycards beep when they enter\n  // I never heard a beep\n  console.log('alone');\n}\n// then who is making those sounds"
+  },
+  {
+    "type": "typing",
+    "text": "while (true) {\n  work();\n  // don't look at the door\n  // it's just a door\n  work();\n}"
+  },
+  {
+    "type": "typing",
+    "text": "<h1>Q4 Disruptive Innovation</h1>\n<p>We must move faster.</p>\n<p>It moves faster.</p>\n<button>Touch Base</button>\n<!-- it is closer -->"
+  },
+  {
+    "type": "dialog",
+    "text": "There. Now I just have to do some minor cleanup, push this code and I'm home-free. HAHA! Home. Home. Home."
+  },
+  {
+    "type": "typing",
+    "text": "// last cleanup pass\nremoveUnusedImports();\nrunTests();\n// 41 passing\n// 1 failing: 'behind me'\n// just a flaky test"
+  },
+  {
+    "type": "typing",
+    "text": "// it is in the room\n// I can hear it breathing\n// in sync with my typing\n// so I will keep typing\nkeepTyping();\nkeepTyping();",
     "sound": "MonsterTension4",
     "closeness": 0.85,
     "delay": 3.0
   },
-  { "type": "dialog", "text": "Jesus." },
-  { "type": "dialog", "text": "I have to be going crazy." },
-  { "type": "dialog", "text": "Is that sound getting CLOSER?" },
-  { "type": "dialog", "text": "Am I just paranoid?" },
-  { "type": "dialog", "text": "I... I just have to push this code." },
-  { "type": "dialog", "text": "I can't stop now." },
-  { "type": "typing", "text": "// typing block 18" },
-  { "type": "typing", "text": "// typing block 19" },
+  { "type": "dialog", "text": "WOW!" },
+  { "type": "dialog", "text": "I have to be going crazy!" },
+  { "type": "dialog", "text": "Is that sound getting CLOSER?! HAHAHA!" },
+  { "type": "dialog", "text": "Am I just paranoid???!!!" },
+  { "type": "dialog", "text": "I... I just have to push THIS CODE." },
+  {
+    "type": "dialog",
+    "text": "I can't stop now. I can never STOP!! code code cOde CoDE codE CODEEEEE!!!!"
+  },
   {
     "type": "typing",
-    "text": "// typing block 20",
+    "text": "git blame notes.txt\n// author: unknown\n// last edited: just now\n// contents: 'keep typing'\n// I did not write that"
+  },
+  {
+    "type": "typing",
+    "text": "if (behind(me)) {\n  // do not turn around\n  // do not turn around\n  // do not turn around\n  typeFaster();\n}\nsubmit("
+  },
+  {
+    "type": "typing",
+    "text": "// ALMOST DONE\n// ALMOST DONE\n// ALMOST DEAD\n\ngit push origin main --for",
     "sound": "MonsterTension5",
     "closeness": 1.0,
     "delay": 3.0

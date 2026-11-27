@@ -89,13 +89,13 @@ anchor_bottom = 0.5
 offset_left = -120.0
 offset_top = -166.5
 offset_right = -160.0
-offset_bottom = -66.5
+offset_bottom = -36.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 18
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
+theme_override_constants/margin_top = 17
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
 [node name="MonitorText" type="RichTextLabel" parent="Monitor/MarginContainer" unique_id=1103578258]
 unique_name_in_owner = true

@@ -8,11 +8,13 @@ enum GameState { TYPING, DIALOG, ENDING }
 enum Keys { NONE, LEFT, RIGHT }
 
 const ENDING_SCREEN = preload("uid://djf06t30qkb5k")
+const DIALOG_FINISHED: Color = Color("#468232")
+const DIALOG_WRITING: Color = Color("#819796")
 
 @export var max_polyphony: int = 2
 
-var dialog = FileAccess.get_file_as_string("res://assets/data/dialog.json")
-var parsed_dialog = JSON.parse_string(dialog)
+var dialog: Variant = FileAccess.get_file_as_string("res://assets/data/dialog.json")
+var parsed_dialog: Variant = JSON.parse_string(dialog)
 var last_block_index: int = parsed_dialog.size() - 1 if parsed_dialog else 0
 var current_game_state: GameState = GameState.TYPING
 var last_key_pressed: Keys = Keys.NONE
@@ -23,9 +25,9 @@ var is_waiting: bool = false
 @onready var dialog_box_node: PanelContainer = $DialogBox
 @onready var dialog_label_node: Monitor = %DialogLabel
 @onready var monitor_text_node: Monitor = %MonitorText
-@onready var text_end_indicator_node: ColorRect = %TextEndIndicator
 @onready var keyboard_click: AudioStreamPlayer = $KeyboardClick
 @onready var keyboard_node: Keyboard = $Keyboard/Sprite
+@onready var text_indicator: TextureRect = $DialogBox/TextIndicator
 
 
 # Called when the node enters the scene tree for the first time.
@@ -126,8 +128,6 @@ func _play_block_sound() -> void:
 	if sfx_audio_node.playing:
 		await sfx_audio_node.finished
 	is_waiting = false
-	if current_game_state == GameState.DIALOG:
-		text_end_indicator_node.visible = true
 
 
 func _change_text_block() -> void:
@@ -135,19 +135,14 @@ func _change_text_block() -> void:
 		return
 	selected_dialog_block += 1
 	dialog_dict = parsed_dialog[selected_dialog_block]
+	text_indicator.modulate = DIALOG_WRITING
 	_set_game_state()
 	_current_selected_node().change_text_block(dialog_dict.text)
 	_play_block_sound()
-	text_end_indicator_node.visible = false
 
 
 func _text_finished() -> void:
-	if (
-		current_game_state == GameState.DIALOG
-		and not is_waiting
-		and text_end_indicator_node.visible == false
-	):
-		text_end_indicator_node.visible = true
+	text_indicator.modulate = DIALOG_FINISHED
 	if selected_dialog_block == last_block_index:
 		current_game_state = GameState.ENDING
 		keyboard_node.set_animation_active(false)

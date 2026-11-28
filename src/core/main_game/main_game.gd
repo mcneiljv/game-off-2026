@@ -82,10 +82,7 @@ func _button_press(key: Keys) -> void:
 	if current_game_state == GameState.DIALOG:
 		dialog_box_node.visible = true
 	if current_game_state == GameState.TYPING:
-		if last_key_pressed == Keys.LEFT:
-			key_hint_node.show_hint(key_hint_node.Keys.RIGHT)
-		if last_key_pressed == Keys.RIGHT:
-			key_hint_node.show_hint(key_hint_node.Keys.LEFT)
+		_update_key_hint()
 		keyboard_click.play()
 
 	valid_key_press.emit(key)
@@ -106,10 +103,7 @@ func _current_selected_node() -> Node:
 
 func _set_game_state() -> void:
 	if dialog_dict.type == "typing":
-		if last_key_pressed == Keys.LEFT:
-			key_hint_node.show_hint(key_hint_node.Keys.RIGHT)
-		if last_key_pressed == Keys.RIGHT:
-			key_hint_node.show_hint(key_hint_node.Keys.LEFT)
+		_update_key_hint()
 		current_game_state = GameState.TYPING
 		keyboard_node.set_animation_active(true)
 		dialog_box_node.visible = false
@@ -156,3 +150,17 @@ func _text_finished() -> void:
 	if selected_dialog_block == last_block_index:
 		current_game_state = GameState.ENDING
 		keyboard_node.set_animation_active(false)
+
+
+func _update_key_hint() -> void:
+	if is_waiting and _current_selected_node().is_text_populated:
+		key_hint_node.show_hint(key_hint_node.Keys.NONE)
+		return
+	if last_key_pressed == Keys.LEFT:
+		key_hint_node.show_hint(key_hint_node.Keys.RIGHT)
+		return
+	if last_key_pressed == Keys.RIGHT:
+		key_hint_node.show_hint(key_hint_node.Keys.LEFT)
+		return
+	key_hint_node.show_hint(key_hint_node.Keys.LEFT)
+	key_hint_node.show_hint(key_hint_node.Keys.RIGHT)

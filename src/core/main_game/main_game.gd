@@ -162,5 +162,4 @@ func _update_key_hint() -> void:
 	if last_key_pressed == Keys.RIGHT:
 		key_hint_node.show_hint(key_hint_node.Keys.LEFT)
 		return
-	key_hint_node.show_hint(key_hint_node.Keys.LEFT)
-	key_hint_node.show_hint(key_hint_node.Keys.RIGHT)
+	key_hint_node.show_hint(key_hint_node.Keys.BOTH)

@@ -20,6 +20,8 @@
 [ext_resource type="AudioStream" uid="uid://cf74egesdsklv" path="res://assets/audio/monster-tension-3.mp3" id="8_1um3w"]
 [ext_resource type="AudioStream" uid="uid://wnnlnxq2ul36" path="res://assets/audio/monster-tension-4.mp3" id="9_4i5e7"]
 [ext_resource type="AudioStream" uid="uid://j0riv1bujyw1" path="res://assets/audio/monster-tension-5.mp3" id="10_1um3w"]
+[ext_resource type="Texture2D" uid="uid://p7q6o40l80rv" path="res://assets/art/tab-indicator.png" id="11_gr0mf"]
+[ext_resource type="Script" uid="uid://cykcovfx0ebal" path="res://src/core/main_game/key_hint.gd" id="11_qp306"]
 [ext_resource type="AudioStream" uid="uid://cjk5oirvgdeki" path="res://assets/audio/coffee-pour.mp3" id="13_drj1i"]
 [ext_resource type="Script" uid="uid://1hnfah7fpp5c" path="res://src/core/main_game/coffee_pour.gd" id="21_grr58"]
 
@@ -33,16 +35,16 @@ texture = ExtResource("2_v63mv")
 
 [node name="DialogBox" type="PanelContainer" parent="." unique_id=1341418139]
 z_index = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = 15.0
-offset_top = -70.0
+offset_top = -10.0
 offset_right = -15.0
-offset_bottom = -12.0
+offset_bottom = 48.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 
 [node name="MarginLabel" type="MarginContainer" parent="DialogBox" unique_id=1255424575]
 layout_mode = 2
@@ -125,6 +127,20 @@ texture = ExtResource("3_iu1vd")
 centered = false
 hframes = 3
 script = ExtResource("4_hn61g")
+
+[node name="KeyHint" type="Node" parent="Keyboard" unique_id=854078779]
+script = ExtResource("11_qp306")
+
+[node name="LeftShiftIndicator" type="Sprite2D" parent="Keyboard/KeyHint" unique_id=766351667]
+visible = false
+position = Vector2(132, 231)
+texture = ExtResource("11_gr0mf")
+
+[node name="RightShiftIndicator" type="Sprite2D" parent="Keyboard/KeyHint" unique_id=1811717109]
+visible = false
+position = Vector2(284, 231)
+texture = ExtResource("11_gr0mf")
+flip_h = true
 
 [node name="DebugLayer" type="CanvasLayer" parent="." unique_id=428591197]
 process_mode = 3

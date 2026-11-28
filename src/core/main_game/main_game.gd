@@ -28,6 +28,7 @@ var is_waiting: bool = false
 @onready var keyboard_click: AudioStreamPlayer = $KeyboardClick
 @onready var keyboard_node: Keyboard = $Keyboard/Sprite
 @onready var text_indicator: TextureRect = $DialogBox/TextIndicator
+@onready var key_hint_node: Node = $Keyboard/KeyHint
 
 
 # Called when the node enters the scene tree for the first time.
@@ -81,6 +82,10 @@ func _button_press(key: Keys) -> void:
 	if current_game_state == GameState.DIALOG:
 		dialog_box_node.visible = true
 	if current_game_state == GameState.TYPING:
+		if last_key_pressed == Keys.LEFT:
+			key_hint_node.show_hint(key_hint_node.Keys.RIGHT)
+		if last_key_pressed == Keys.RIGHT:
+			key_hint_node.show_hint(key_hint_node.Keys.LEFT)
 		keyboard_click.play()
 
 	valid_key_press.emit(key)
@@ -101,10 +106,15 @@ func _current_selected_node() -> Node:
 
 func _set_game_state() -> void:
 	if dialog_dict.type == "typing":
+		if last_key_pressed == Keys.LEFT:
+			key_hint_node.show_hint(key_hint_node.Keys.RIGHT)
+		if last_key_pressed == Keys.RIGHT:
+			key_hint_node.show_hint(key_hint_node.Keys.LEFT)
 		current_game_state = GameState.TYPING
 		keyboard_node.set_animation_active(true)
 		dialog_box_node.visible = false
 	if dialog_dict.type == "dialog":
+		key_hint_node.show_hint(key_hint_node.Keys.BOTH)
 		current_game_state = GameState.DIALOG
 		keyboard_node.set_animation_active(false)
 
